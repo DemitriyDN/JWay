@@ -1,0 +1,33 @@
+<div id='sidebar' class='sidebar-col col'>
+  <div class='sidebar-box'>
+    <%= render 'posts/common/please_note' %>
+  </div>
+  <div class='sidebar-box'>
+    <div class='sidebar-title'>Tags</div>
+    <hr>
+    <ul class='tags'>
+      <li><a href='#'>middleware</a></li>
+      <li><a href='#'>rails</a></li>
+      <li><a href='#'>rack</a></li>
+      <li><a href='#'>javascipt</a></li>
+      <li><a href='#'>angular</a></li>
+    </ul>
+    <div class='clear'></div>
+  </div>
+
+  <%= render partial: 'posts/common/relative_posts', locals: { posts: @relative_posts } %>
+
+  <div class='sidebar-box'>
+    <div class='sidebar-title'>Подписка на рассылку</div>
+    <hr>
+    <p>
+      The Modulus monthly newsletter brings you exclusive content only available
+      to subscribers and the best Node.js material from around the web.
+    </p>
+    <div class='email'>
+      <label for='email'>Email: </label>
+      <input name='email' type='email' placeholder='some@gmail.com'>
+    </div>
+  </div>
+</div>
+<div class='clear'></div>

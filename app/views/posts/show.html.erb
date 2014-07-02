@@ -1,7 +1,23 @@
 <div id='content' class='content-col col'>
   <div id='post-index'>
-    <%= render 'posts/common/article' %>
+    <div class='post-info'>
+      <div class='date'>Июль 16, 2014</div>
+      <div class='author'>
+        <a href=''>No Original</a>
+      </div>
+    </div>
+
+    <article class='post'>
+      <%= render partial: 'posts/common/title', locals: { article: @post } %>
+      <%= render partial: 'posts/shared/tags' %>
+
+      <div class='clear'></div>
+
+      <%= render partial: 'posts/common/post_body', locals: { article: @post.body } %>
+      <%= render partial: 'posts/shared/back', locals: { article: @post } %>
+    </article>
+
   </div>
 </div>
 
-<%= render 'posts/common/sidebar' %>
+<%= render 'posts/common/post_sidebar' %>

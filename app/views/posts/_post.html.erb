@@ -1,0 +1,17 @@
+<div class='post-info'>
+  <div class='date'>Июль 16, 2014</div>
+  <div class='author'>
+    <a href=''>No Original</a>
+  </div>
+</div>
+
+<article class='post'>
+  <%= render partial: 'posts/common/title', locals: { article: post } %>
+
+  <div class='clear'></div>
+
+  <%= render partial: 'posts/common/post_body', locals: { article: post.body_title } %>
+
+
+  <%= render partial: 'posts/shared/show_more', locals: { article: post } %>
+</article>
