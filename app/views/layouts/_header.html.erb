@@ -1,15 +1,17 @@
 <header>
-	<h1 id="logo">
-		<a href="/" title="Modulus Blog Home"><img src="assets/modulus-logoSmall-gray.png" alt="Modulus"></a>
+	<h1 id='logo'>
+		<a href='/' title='Modulus Blog Home'>
+			<%= image_tag 'modulus-logoSmall-gray.png' %>
+		</a>
 	</h1>
 
-	<div class="tagline">
-		<img src="assets/progressTag-gray.png">
+	<div class='tagline'>
+		<%= image_tag 'progressTag-gray.png' %>
 	</div>
 
-	<div class="search">
-		<form action="/search" method="GET" class="search-form">
-			<input type="text" placeholder="search" name="q">
+	<div class='search'>
+		<form action='/search' method='GET' class='search-form'>
+			<input type='text' placeholder='search' name='q'>
 		</form>
 	</div>
 
