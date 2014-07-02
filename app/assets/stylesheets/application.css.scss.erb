@@ -91,18 +91,19 @@ body {
 						clear: both;
 						width: 180px;
 						text-align: right;
-						text-transform: uppercase;
+						margin-top: 13px;
+						font-family: Georgia, Times, serif;
 
 						.date {
-							color: #8CCFC2;
-							font-size: 14px;
-							font-weight: 600;
+							font-size: 20px;
+							color: #4D4242;
+							text-shadow: 0 0 1px #777;
 						}
 
 						.author {
 							a {
 								font-size: 11px;
-								color: #A0A2A4;
+								color: #999;
 								text-decoration: none;
 								font-weight: 600;
 							}
@@ -138,6 +139,7 @@ body {
 
 								&:hover {
 									color: #666;
+									text-decoration: underline;
 								}
 							}
 							.comments {
@@ -162,9 +164,11 @@ body {
 								}
 							}
 						}
-						.img {
+						.post-img {
 							img {
-
+								border: 1px solid #5F5F5F;
+								width: 618px;
+								height: 178px;
 							}
 						}
 						.summary {
@@ -249,7 +253,7 @@ body {
 					}
 
 					.email {
-						margin-top: 7px;
+						margin: 7px 0px;
 
 						label {
 							margin-right: 5px;
@@ -272,9 +276,10 @@ body {
 							a {
 								text-decoration: underline;
 								cursor: pointer;
-								color: #424854;
+								color: #666;
 								text-shadow: #fff 0 1px;
 							}
+
 							&:last-child {
 								border-bottom: none;
 								box-shadow: none;
@@ -356,10 +361,9 @@ body {
 		footer {
 			clear: both;
 			text-align: center;
-			font-size: .66em;
-			padding: 20px 0;
-			margin-left: -100px;
-			color: #CACACB;
+			font-size: 9px;
+			color: #666;
+			margin-bottom: 5px;
 		}
 	}
 }
