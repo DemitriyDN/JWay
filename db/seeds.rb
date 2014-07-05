@@ -5,6 +5,6 @@ require 'faker'
 
 require Rails.root.join('db/seeds/posts')
 
-UploadPosts.add_posts
+# UploadPosts.add_posts
 
 puts 'Load seeds complite!'

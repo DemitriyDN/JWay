@@ -15,8 +15,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post.create(post_params)
-      redirect root_path, notice: 'Post is successfully created!'
+    if Post.create(post_params)
+      redirect_to root_path, notice: 'Post is successfully created!'
     else
       render :new
     end

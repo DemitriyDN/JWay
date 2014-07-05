@@ -2,6 +2,4 @@
 //= require jquery_ujs
 //= require_self
 
-//= require jquery.markitup
-//= require set
-//= require post
+//= require mark_it_up/init

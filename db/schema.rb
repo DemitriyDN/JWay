@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140702181612) do
     t.string   "title"
     t.text     "body_title"
     t.text     "body"
+    t.integer  "status",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
