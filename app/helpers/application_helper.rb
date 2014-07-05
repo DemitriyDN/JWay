@@ -4,7 +4,6 @@ module ApplicationHelper
   end
 
   def comments_count post
-    # link_to '?', post_url(post, anchor: 'disqus_thread'), :"data-disqus-identifer" => post.id
-    3
+    link_to '?', post_url(post, anchor: 'disqus_thread'), :"data-disqus-identifer" => post.id
   end
 end
