@@ -9,14 +9,16 @@
 
     <article class='post'>
       <%= render partial: 'posts/common/title', locals: { article: @post } %>
-      <%= render partial: 'posts/shared/tags' %>
 
       <div class='clear'></div>
 
       <%= render partial: 'posts/common/post_body', locals: { article: @post.body } %>
       <%= render partial: 'posts/shared/back', locals: { article: @post } %>
     </article>
+  </div>
 
+  <div id='comments-wrapper'>
+    <%= render partial: 'posts/comments/post_comments', locals: { post: @post } %>
   </div>
 </div>
 

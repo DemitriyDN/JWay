@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-  has_many :comments
+  DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : "j-way-rails".freeze
 end

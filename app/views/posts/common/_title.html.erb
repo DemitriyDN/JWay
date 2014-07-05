@@ -1,7 +1,7 @@
 <div class='title'>
   <%= link_to article.title, post_path(article.id) %>
   <div class='comments'>
-    <div class='diget'>3</div>
+    <div class='diget'><%= comments_count(article) %></div>
     <div class='img'>
       <%= image_tag 'comments.png' %>
     </div>
