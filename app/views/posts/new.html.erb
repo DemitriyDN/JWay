@@ -2,7 +2,7 @@
   <%= form_for @post do |f| %>
     <%= f.text_field :title, placeholder: 'Title' %>
     <%= f.text_area :body_title, placeholder: 'body_title' %>
-    <%= f.text_area :body, id: 'markdown', cols: '80', rows: '20', placeholder: '...markdown stuff...' %>
+    <%= f.text_area :body, cols: '80', rows: '20', placeholder: '...markdown stuff...' %>
     <%= f.submit 'Создать' %>
   <% end %>
 </div>

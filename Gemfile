@@ -12,10 +12,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
-# gem 'RedCloth'
-# gem 'coderay'
-gem 'pygments.rb'
-gem 'redcarpet'
 
 
 group :doc do
