@@ -1,7 +1,9 @@
 //= require_directory ./bootstrap
 //= require_self
-//= require posts
+//= require tags
 //= require comments
+//= require highlighter
+//= require post_new
 
 body {
 	font-family: Verdana,sans-serif;
@@ -177,11 +179,9 @@ body {
 							margin: 7px 0;
 							text-align: justify;
 
-							p {
-								color: #555;
-								font-size: 12px;
-								line-height: 16px;
-							}
+							color: #555;
+							font-size: 12px;
+							line-height: 16px;
 						}
 						.read_mode {
 							a {

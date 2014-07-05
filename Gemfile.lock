@@ -109,6 +109,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    markitup-rails (1.1.3)
+      rails (>= 3.1)
     meta_request (0.3.0)
       callsite
       rack-contrib
@@ -128,6 +130,10 @@ GEM
       websocket-driver (>= 0.2.0)
     polyglot (0.3.5)
     populator (1.0.0)
+    posix-spawn (0.3.8)
+    pygments.rb (0.6.0)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
@@ -151,6 +157,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (3.1.2)
     rspec-core (3.0.2)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.2)
@@ -218,6 +225,7 @@ GEM
     websocket-driver (0.3.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -238,11 +246,14 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   launchy
+  markitup-rails
   meta_request
   pg
   poltergeist
   populator
+  pygments.rb
   rails (= 4.1.1)
+  redcarpet
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
