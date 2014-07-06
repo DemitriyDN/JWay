@@ -8,5 +8,9 @@ module UploadPosts
     end
   end
 
-  module_function :add_posts
+  def add_user
+    User.create({ email: 'nick-supernick@gmail.com', password: 'password' })
+  end
+
+  module_function :add_posts, :add_user
 end

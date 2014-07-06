@@ -1,6 +1,5 @@
 <% flash.each do |name, message| %>
   <div id='flash_message_notification' class="alert alert-<%= name == 'notice' ? 'success' : 'alert' %>">
-    <button type='button' class='close' data-dismiss='alert'>×</button>
     <strong><%= message %></strong>
   </div>
 <% end %>

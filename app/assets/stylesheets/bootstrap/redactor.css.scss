@@ -1,0 +1,28 @@
+//= require redactor-rails
+
+// Redactror Rails START
+.redactor_box .redactor_redactor {
+  height: 200px;
+}
+// Redactror Rails END
+
+.control-group {
+  margin-bottom: 20px;
+
+  .control-label {
+    float: left;
+    width: 160px;
+    padding-top: 5px;
+    text-align: right;
+  }
+
+  .controls {
+    margin-left: 180px;
+
+    input {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+  }
+}

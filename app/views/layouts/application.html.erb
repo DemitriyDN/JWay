@@ -16,8 +16,10 @@
 
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
   <div id='main'>
-    <%= render 'layouts/header' %>
+    <%= render 'shared/admin' %>
     <%= render 'shared/flash_messages' %>
+
+    <%= render 'layouts/header' %>
 
     <div id="content_wrapper">
       <%= yield %>

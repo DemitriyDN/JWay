@@ -1,0 +1,7 @@
+<% if current_user %>
+  <div id='sign_out'>
+    <%= link_to 'Создать новый пост', new_post_path %>
+    /
+    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+  </div>
+<% end %>

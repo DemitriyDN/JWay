@@ -1,0 +1,52 @@
+#sign_in {
+  margin: 50px auto;
+  width: 600px;
+
+  #form{
+    padding-top: 10px;
+    background: url(<%= asset_path 'form/form_top.gif' %>) no-repeat 0 0;
+
+    fieldset{
+      float: left;
+      width: 260px;
+      margin-left: 25px;
+
+      .fields {
+        margin-bottom: 7px;
+        line-height: 23px;
+
+        input {
+          width:252px;
+          padding:3px;
+        }
+
+        label {
+          font-size: 18px;
+          font-family: Georgia, Times, serif;
+        }
+      }
+    }
+
+    .submit {
+      float: left;
+      margin: 44px 0 0 80px;
+      display: inline-block;
+
+      button {
+        width: 150px;
+        color: #fff;
+        font-size: 15px;
+        line-height: 33px;
+        border: none;
+        background: url(<%= asset_path 'form/form_button.gif' %>) no-repeat 0 0;
+        cursor: pointer;
+      }
+    }
+
+    .bottom {
+      clear: both;
+      background: url(<%= asset_path 'form/form_bottom.gif' %>) no-repeat 0 100%;
+      padding: 0 25px 25px;
+    }
+  }
+}
