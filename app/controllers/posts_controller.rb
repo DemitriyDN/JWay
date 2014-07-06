@@ -8,9 +8,9 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    find_post
     @relative_posts = Post.limit(5)
-    @tags = Tag.all
+    @tags = @post.tags
   end
 
   def new
@@ -26,11 +26,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    find_post
   end
 
   def update
-    @post = Post.find(params[:id])
+    find_post
     if @post.update_attributes!(post_params)
       redirect_to root_path, notice: 'Post is successfully updated!'
     else
@@ -39,6 +39,10 @@ class PostsController < ApplicationController
   end
 
   private
+  def find_post
+    @post = Post.find(params[:id])
+  end
+
   def post_params
     params.require(:post).permit( :title, :body, :body_title, :status )
   end
