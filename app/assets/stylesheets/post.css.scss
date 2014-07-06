@@ -1,0 +1,31 @@
+.summary {
+  margin: 7px 0;
+  text-align: justify;
+
+  color: #333;
+  font-size: 12px;
+  line-height: 16px;
+
+  p {
+    margin: 0 0 20px 0;
+    text-align: justify;
+
+    .align-center {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .align-left {
+      margin: 0 20px 5px 0;
+      padding: 4px;
+      display: inline;
+      float: left;
+    }
+
+    a {
+      text-decoration: underline;
+      outline: none;
+      color: #3E4967;
+    }
+  }
+}
