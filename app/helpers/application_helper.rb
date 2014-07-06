@@ -8,7 +8,11 @@ module ApplicationHelper
   end
 
   def original original_link
-    # <a href=''>No Original</a>
+    if original_link
+      link_to original_link, 'Original'
+    else
+      'No Original'
+    end
   end
 
   def info_date date
