@@ -13,5 +13,11 @@ module UploadPosts
     User.create({ email: 'nick-supernick@gmail.com', password: 'password' })
   end
 
-  module_function :add_posts, :add_user
+  def add_tags
+    ['sublime', 'rake', 'rails', 'ruby'].each do |tag|
+      Tag.create({ name: tag })
+    end
+  end
+
+  module_function :add_posts, :add_user, :add_tags
 end

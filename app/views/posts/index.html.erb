@@ -5,4 +5,4 @@
   <%= render partial: 'posts/shared/paginator', locals: { posts: @posts } %>
 </div>
 
-<%= render 'posts/common/index_sidebar' %>
+<%= render partial: 'posts/common/index_sidebar', locals: { tags: @tags } %>

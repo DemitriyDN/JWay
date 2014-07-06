@@ -4,13 +4,13 @@ class PostsController < ApplicationController
   def index
     # @posts = Post.published.page(params[:page]).per(3)
     @posts = Post.published.page(params[:page]).per(3)
-    @tags = []
+    @tags = Tag.all
   end
 
   def show
     @post = Post.find(params[:id])
     @relative_posts = Post.limit(5)
-    @tags = []
+    @tags = Tag.all
   end
 
   def new

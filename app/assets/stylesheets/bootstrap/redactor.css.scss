@@ -23,6 +23,24 @@
       display: inline-block;
       margin-bottom: 0;
       vertical-align: middle;
+      vertical-align: baseline;
+    }
+
+    .checkbox {
+      display: inline-block;
+      padding-top: 5px;
+      margin-bottom: 0;
+      min-height: 20px;
+    }
+
+    .btn-success {
+      color: #fff;
+      background-image: linear-gradient(to bottom, #62c462, #51a351);
+      padding: 4px 12px;
+      font-size: 14px;
+      border: 1px solid #969696;
+      border-radius: 4px;
+      cursor: pointer;
     }
   }
 }

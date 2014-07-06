@@ -18,4 +18,12 @@ module ApplicationHelper
   def info_date date
     content_tag(:div, l(date) , class: 'date')
   end
+
+  def tags_displaying tags
+    content_tag(:ul, class: 'tags') do
+      tags.each do |item|
+        concat content_tag(:li, link_to(item.name, '#') )
+      end
+    end
+  end
 end
