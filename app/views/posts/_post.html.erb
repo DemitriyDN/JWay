@@ -1,9 +1,4 @@
-<div class='post-info'>
-  <div class='date'>Июль 16, 2014</div>
-  <div class='author'>
-    <a href=''>No Original</a>
-  </div>
-</div>
+<%= render partial: 'posts/common/info', locals: { article: post } %>
 
 <article class='post'>
   <%= render partial: 'posts/common/title', locals: { article: post } %>

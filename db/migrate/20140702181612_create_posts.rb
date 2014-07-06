@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body_title
       t.text :body
       t.integer :status, default: 0
+      t.string :original
 
       t.timestamps
     end
