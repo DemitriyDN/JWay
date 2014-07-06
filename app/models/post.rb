@@ -7,4 +7,6 @@ class Post < ActiveRecord::Base
     done: 2
   }
 
+  default_scope { order('created_at DESC') }
+  scope :published, -> { where(status: 2) }
 end

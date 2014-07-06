@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
 gem 'redactor-rails'
+gem 'kaminari'
 
 
 group :doc do

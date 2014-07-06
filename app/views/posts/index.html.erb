@@ -2,7 +2,7 @@
   <div id='post-index'>
     <%= render @posts %>
   </div>
-  <%= render 'posts/shared/paginator' %>
+  <%= render partial: 'posts/shared/paginator', locals: { posts: @posts } %>
 </div>
 
 <%= render 'posts/common/index_sidebar' %>
