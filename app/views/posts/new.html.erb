@@ -1,8 +1,31 @@
 <div id='content' class='content-col col'>
   <%= form_for @post do |f| %>
-    <%= f.text_field :title, placeholder: 'Title' %>
-    <%= f.text_area :body_title, placeholder: 'body_title' %>
-    <%= f.text_area :body, cols: '80', rows: '20', placeholder: '...markdown stuff...' %>
-    <%= f.submit 'Создать' %>
+
+  <div class="control-group">
+    <label class="control-label">Title</label>
+    <div class="controls">
+      <%= f.text_field :title, placeholder: 'Title' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Body - Title</label>
+    <div class="controls">
+      <%= f.text_area :body_title, placeholder: 'body_title' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Article</label>
+    <div class="controls">
+      <%= f.text_area :body, class: 'redactor', cols: '80', rows: '20', placeholder: '...markdown stuff...' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit 'Создать' %>
+    </div>
+  </div>
   <% end %>
 </div>

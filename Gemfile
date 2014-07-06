@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
+gem 'redactor-rails'
 
 
 group :doc do

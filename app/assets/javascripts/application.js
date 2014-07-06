@@ -8,6 +8,8 @@
 //= require ./highlighter/shBrushXml
 //= require ./highlighter/shBrushSass
 
+//= require_tree ./redactor-rails
+
 $(function() {
   SyntaxHighlighter.all();
 });
