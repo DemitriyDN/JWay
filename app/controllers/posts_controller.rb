@@ -22,11 +22,18 @@ class PostsController < ApplicationController
     end
   end
 
-  # def edit
-  # end
+  def edit
+    @post = Post.find(params[:id])
+  end
 
-  # def udpate
-  # end
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes!(post_params)
+      redirect_to root_path, notice: 'Post is successfully updated!'
+    else
+      render :edit
+    end
+  end
 
   private
   def post_params
