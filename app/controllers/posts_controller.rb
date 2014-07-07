@@ -2,14 +2,19 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.published.page(params[:page]).per(3)
+    @posts = Post.published(current_user).page(params[:page]).per(3)
     @tags  = Post.tag_counts_on(:tags)
   end
 
   def show
-    find_post
-    @relative_posts = @post.find_related_tags.limit_rand(5)
-    @tags = @post.tags
+    # User can view this post?
+
+    if find_post
+      @relative_posts = @post.find_related_tags.limit_rand(5)
+      @tags = @post.tags
+    else
+      redirect_to root_path, alert: 'Post not find!' unless @post
+    end
   end
 
   def new
@@ -18,9 +23,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    if Post.create(post_params)
+    @post = Post.new(post_params)
+    if @post.save
       redirect_to root_path, notice: 'Post is successfully created!'
     else
+      @tags = Tag.all
       render :new
     end
   end
@@ -40,7 +47,7 @@ class PostsController < ApplicationController
 
   private
   def find_post
-    @post = Post.find(params[:id])
+    @post = Post.published(current_user).where('id= ?', params[:id]).first
   end
 
   def post_params
