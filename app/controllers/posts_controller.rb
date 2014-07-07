@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @tags = Post.tag_counts_on(:tags)
   end
 
   def create

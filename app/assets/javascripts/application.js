@@ -9,6 +9,7 @@
 //= require ./highlighter/shBrushSass
 
 //= require_tree ./redactor-rails
+//= require_tree ./tags
 
 $(function() {
   SyntaxHighlighter.all();
