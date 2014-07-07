@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redactor-rails'
 gem 'kaminari'
-
+gem 'acts-as-taggable-on'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

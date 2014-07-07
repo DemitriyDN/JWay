@@ -1,6 +1,6 @@
 module UploadPosts
   def add_posts
-    tags_ids = Tag.pluck(:id)
+    tags_names = Tag.pluck(:name)
 
     Post.populate 20 do |post|
       post.title = Populator.words(2..6).titleize
@@ -11,7 +11,7 @@ module UploadPosts
     end
 
     Post.all.each do |post|
-      post.tags << Tag.find(tags_ids.sample)
+      post.tag_list.add(tags_names.sample)
       post.save!
     end
   end

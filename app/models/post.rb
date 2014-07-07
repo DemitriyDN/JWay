@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  has_and_belongs_to_many :tags
+  acts_as_taggable_on :tags
 
   DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : "j-way-rails".freeze
 

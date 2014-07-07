@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    # @tom.find_related_skills # => [<User name="Bobby">, <User name="Frankie">]
+
     find_post
     @relative_posts = Post.limit(5)
     @tags = @post.tags
