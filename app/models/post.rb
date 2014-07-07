@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
   acts_as_taggable_on :tags
 
+  validates :title,
+            :body,
+            :body_title, presence: true
+
   DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : 'j-way-rails'.freeze
 
   enum status: {

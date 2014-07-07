@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @tags = Post.tag_counts_on(:tags)
+    @tags = Tag.all
   end
 
   def create
@@ -44,6 +44,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit( :title, :body, :body_title, :status, :tag_list )
+    params.require(:post).permit( :title, :body, :body_title, :original, :status, tag_list: [] )
   end
 end

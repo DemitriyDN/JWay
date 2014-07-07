@@ -14,8 +14,14 @@ module UploadPosts
   end
 
   def add_tags
+    tags = ['rake', 'rack', 'sublime', 'rails', 'ruby', 'sql']
+    tags.each do |tag|
+      Tag.create({ name: tag })
+    end
+
     Post.all.each do |post|
-      post.tag_list.add('sublime, rails', parse: true)
+      # post.tag_list.add('sublime, rails', parse: true)
+      post.tag_list.add( tags.sample )
       post.save!
     end
   end
