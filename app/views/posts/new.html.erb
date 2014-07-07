@@ -33,7 +33,7 @@
     <%= f.label :tag_list, 'Теги: ', class: 'control-label' %>
 
     <div class='controls'>
-      <%= f.select :tag_list, options_from_collection_for_select( @tags, :id, :name ),
+      <%= f.select :tag_list, options_from_collection_for_select( @tags, :name, :name ),
                               {},
                               { multiple: true,
                                 tabindex: 4,
