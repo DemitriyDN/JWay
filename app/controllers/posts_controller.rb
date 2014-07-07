@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.published(current_user).page(params[:page]).per(3)
+    @posts = Post.available_for(current_user).page(params[:page]).per(3)
     @tags  = Post.tag_counts_on(:tags)
   end
 
@@ -45,12 +45,27 @@ class PostsController < ApplicationController
     end
   end
 
+  def swich_state
+    find_post
+    if swich_params[:state] == 'true'
+      @post.approved!
+    else
+      @post.verification!
+    end
+
+    render nothing: true
+  end
+
   private
   def find_post
-    @post = Post.published(current_user).where('id= ?', params[:id]).first
+    @post = Post.available_for(current_user).get_first(params[:id])
   end
 
   def post_params
     params.require(:post).permit( :title, :body, :body_title, :original, :status, tag_list: [] )
+  end
+
+  def swich_params
+    params.permit( :id, :state )
   end
 end

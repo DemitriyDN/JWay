@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
   }
 
   scope :by_date, -> { order('created_at DESC') }
-  scope :published, -> (user) { user ? by_date : where(status: 1).by_date }
+  scope :available_for, -> (user) { user ? by_date : where(status: 1).by_date }
   scope :limit_rand, ->(num) { limit(num).order('RANDOM()') }
+  scope :get_first, ->(id) { where('id= ?', id).first }
 end

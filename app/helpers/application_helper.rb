@@ -29,9 +29,9 @@ module ApplicationHelper
     end
   end
 
-  def approve_switch user, approved
+  def approve_switch user, post
     if user
-      check_box_tag 'post' , :status , approved,  class: 'activate-article'
+      check_box_tag 'post_switcher' , :status , post.approved?,  data: { 'id' => post.id } ,class: 'activate-article'
     end
   end
 end
