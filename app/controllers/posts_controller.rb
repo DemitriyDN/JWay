@@ -2,24 +2,13 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    # @posts = Post.published.page(params[:page]).per(3)
     @posts = Post.published.page(params[:page]).per(3)
-    @tags = Tag.all
+    @tags  = Post.tag_counts_on(:tags)
   end
 
   def show
-    # @tom.find_related_skills # => [<User name="Bobby">, <User name="Frankie">]
-
     find_post
-
-    if params[:tag].present?
-      @relative_posts = Post.tagged_with(params[:tag])
-    else
-      @relative_posts = Post.postall
-    end
-
-
-    # @relative_posts = Post.limit(5)
+    @relative_posts = @post.find_related_tags.limit_rand(5)
     @tags = @post.tags
   end
 
