@@ -7,8 +7,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    # User can view this post?
-
     if find_post
       @relative_posts = Post.limit_rand(5)
       @tags = @post.tags
@@ -23,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(Post.reject_blank(post_params))
     if @post.save
       redirect_to root_path, notice: 'Post is successfully created!'
     else
@@ -47,11 +45,7 @@ class PostsController < ApplicationController
 
   def swich_state
     find_post
-    if swich_params[:state] == 'true'
-      @post.approved!
-    else
-      @post.verification!
-    end
+    @post.update_state(swich_params[:state])
 
     render nothing: true
   end
@@ -62,7 +56,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit( :title, :body, :body_title, :original, :status, tags: [] )
+    params.require(:post).permit( :title, :body, :body_title, :original, :status, tag_ids: [] )
   end
 
   def swich_params

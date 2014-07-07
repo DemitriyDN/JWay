@@ -30,10 +30,10 @@
   </div>
 
   <div class='control-group'>
-    <%= f.label :tag_list, 'Теги: ', class: 'control-label' %>
+    <%= f.label :tag_ids, 'Теги: ', class: 'control-label' %>
 
     <div class='controls'>
-      <%= f.select :tag_list, options_from_collection_for_select( @tags, :name, :name ),
+      <%= f.select :tag_ids, options_from_collection_for_select( @tags, :id, :name ),
                               {},
                               { multiple: true,
                                 tabindex: 4,

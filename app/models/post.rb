@@ -16,4 +16,17 @@ class Post < ActiveRecord::Base
   scope :available_for, -> (user) { user ? by_date : where(status: 1).by_date }
   scope :limit_rand, ->(num) { limit(num).order('RANDOM()') }
   scope :get_first, ->(id) { where('id= ?', id).first }
+
+  def self.reject_blank param
+    param[:tag_ids] = param[:tag_ids].reject(&:empty?)
+    param
+  end
+
+  def update_state state
+    if state == 'true'
+      self.approved!
+    else
+      self.verification!
+    end
+  end
 end
