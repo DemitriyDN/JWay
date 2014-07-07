@@ -3,14 +3,14 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.available_for(current_user).page(params[:page]).per(3)
-    @tags  = Post.tag_counts_on(:tags)
+    @tags  = Tag.all
   end
 
   def show
     # User can view this post?
 
     if find_post
-      @relative_posts = @post.find_related_tags.limit_rand(5)
+      @relative_posts = Post.limit_rand(5)
       @tags = @post.tags
     else
       redirect_to root_path, alert: 'Post not find!' unless @post
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit( :title, :body, :body_title, :original, :status, tag_list: [] )
+    params.require(:post).permit( :title, :body, :body_title, :original, :status, tags: [] )
   end
 
   def swich_params

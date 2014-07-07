@@ -20,8 +20,7 @@ module UploadPosts
     end
 
     Post.all.each do |post|
-      # post.tag_list.add('sublime, rails', parse: true)
-      post.tag_list.add( tags.sample )
+      post.tags << Tag.all.sample
       post.save!
     end
   end

@@ -1,7 +1,7 @@
 require 'populator'
 require 'faker'
 
-[Post].each(&:delete_all)
+[Post, User, Tag].each(&:delete_all)
 
 require Rails.root.join('db/seeds/posts')
 
