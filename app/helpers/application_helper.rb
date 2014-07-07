@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include ActsAsTaggableOn::TagsHelper
+
   def page_title title_text
     content_for :title, "JWay - #{title_text}"
   end

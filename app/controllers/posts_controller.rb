@@ -11,7 +11,15 @@ class PostsController < ApplicationController
     # @tom.find_related_skills # => [<User name="Bobby">, <User name="Frankie">]
 
     find_post
-    @relative_posts = Post.limit(5)
+
+    if params[:tag].present?
+      @relative_posts = Post.tagged_with(params[:tag])
+    else
+      @relative_posts = Post.postall
+    end
+
+
+    # @relative_posts = Post.limit(5)
     @tags = @post.tags
   end
 
@@ -46,6 +54,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit( :title, :body, :body_title, :status )
+    params.require(:post).permit( :title, :body, :body_title, :status, :tag_list )
   end
 end

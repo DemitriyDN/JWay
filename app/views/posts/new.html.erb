@@ -30,14 +30,11 @@
   </div>
 
   <div class="control-group">
-    <%= f.label :tag, 'Категория: ', class: 'control-label' %>
+    <%= f.label :tag_list, 'Теги: ', class: 'control-label' %>
     <div class="controls">
-      <% Tag.all.each do |tag| %>
       <label class="checkbox inline">
-        <%= check_box_tag 'post[tags_ids][]', tag.id, @post.tag_ids.include?(tag.id) %>
-        <%= tag.name %>
+        <%= f.text_field :tag_list %>
       </label>
-      <% end %>
     </div>
   </div>
 
