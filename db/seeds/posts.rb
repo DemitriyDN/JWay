@@ -4,7 +4,7 @@ module UploadPosts
       post.title = Populator.words(2..6).titleize
       post.body_title = Populator.sentences(3)
       post.body = Populator.sentences(15)
-      post.status = 2
+      post.status = 1
       post.original = nil
     end
   end

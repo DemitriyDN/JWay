@@ -14,4 +14,5 @@
 
 $(function() {
   SyntaxHighlighter.all();
+  $('.activate-article').bootstrapSwitch();
 });

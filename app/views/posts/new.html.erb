@@ -1,38 +1,38 @@
 <div id='content' class='content-col col'>
   <%= form_for @post do |f| %>
 
-  <div class="control-group">
-    <label class="control-label">Original:</label>
-    <div class="controls">
+  <div class='control-group'>
+    <label class='control-label'>Original:</label>
+    <div class='controls'>
       <%= f.text_field :original, placeholder: 'Original link' %>
     </div>
   </div>
 
-  <div class="control-group">
-    <label class="control-label">Title:</label>
-    <div class="controls">
+  <div class='control-group'>
+    <label class='control-label'>Title:</label>
+    <div class='controls'>
       <%= f.text_field :title, placeholder: 'Title' %>
     </div>
   </div>
 
-  <div class="control-group">
-    <label class="control-label">Body - Title:</label>
-    <div class="controls">
+  <div class='control-group'>
+    <label class='control-label'>Body - Title:</label>
+    <div class='controls'>
       <%= f.text_area :body_title, placeholder: 'body_title' %>
     </div>
   </div>
 
-  <div class="control-group">
-    <label class="control-label">Article:</label>
-    <div class="controls">
+  <div class='control-group'>
+    <label class='control-label'>Article:</label>
+    <div class='controls undoreset'>
       <%= f.text_area :body, class: 'redactor', cols: '80', rows: '20', placeholder: '...markdown stuff...' %>
     </div>
   </div>
 
-  <div class="control-group">
+  <div class='control-group'>
     <%= f.label :tag_list, 'Теги: ', class: 'control-label' %>
 
-    <div class="controls">
+    <div class='controls'>
       <%= f.select :tag_list, options_from_collection_for_select( @tags, :id, :name ),
                               {},
                               { multiple: true,
@@ -42,9 +42,9 @@
     </div>
   </div>
 
-  <div class="clear"></div>
-  <div class="control-group">
-    <div class="controls">
+  <div class='clear'></div>
+  <div class='control-group'>
+    <div class='controls'>
       <%= f.submit 'Создать', class: 'btn-success' %>
     </div>
   </div>

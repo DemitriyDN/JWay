@@ -28,4 +28,10 @@ module ApplicationHelper
       end
     end
   end
+
+  def approve_switch user, approved
+    if user
+      check_box_tag 'post' , :status , approved,  class: 'activate-article'
+    end
+  end
 end

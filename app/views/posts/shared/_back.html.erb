@@ -1,3 +1,6 @@
 <div class='read_mode'>
   <%= link_to 'Назад', :back %>
 </div>
+
+<%= approve_switch(current_user, article.approved?) %>
+
