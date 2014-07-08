@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-
     @posts = Post.available_for(current_user).with_search(params[:search]).page(params[:page]).per(3)
     @tags  = Tag.all
   end

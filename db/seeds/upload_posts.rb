@@ -7,6 +7,7 @@ module UploadPosts
       post.body = Faker::Lorem.sentence(15)
       post.status = 1
       post.original = nil
+      post.save!
     end
   end
 
@@ -17,7 +18,7 @@ module UploadPosts
   def add_tags
     tags = ['rake', 'rack', 'sublime', 'rails', 'ruby', 'sql']
     tags.each do |tag|
-      Tag.create({ name: tag })
+      Tag.create!({ name: tag })
     end
 
     Post.all.each do |post|
@@ -28,11 +29,12 @@ module UploadPosts
 
   def add_subscriptions
     20.times do
-      post = Subscription.new
+      subscriber = Subscription.new
       subscriber.email = Faker::Internet.email
       subscriber.last_id = 1
+      subscriber.save!
     end
   end
 
-  module_function :add_posts, :add_user, :add_tags
+  module_function :add_posts, :add_user, :add_tags, :add_subscriptions
 end

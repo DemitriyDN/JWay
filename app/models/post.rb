@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
     if query
       where('title like ?', "%#{query}%")
     else
-      scoped
+      all
     end
   end
 
