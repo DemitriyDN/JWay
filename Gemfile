@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.2'
 
-gem 'rails', '4.1.1'
+gem 'rails'
 gem 'pg'
 
 gem 'sass-rails', '~> 4.0.3'
@@ -49,7 +49,6 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
 
-  gem 'populator'
   gem 'faker'
 
   gem 'launchy'

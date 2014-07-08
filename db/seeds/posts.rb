@@ -1,9 +1,10 @@
 module UploadPosts
   def add_posts
-    Post.populate 20 do |post|
-      post.title = Populator.words(2..6).titleize
-      post.body_title = Populator.sentences(3)
-      post.body = Populator.sentences(15)
+    20.times do
+      post = Post.new
+      post.title = Faker::Lorem.sentence.titleize
+      post.body_title = Faker::Lorem.sentence(3)
+      post.body = Faker::Lorem.sentence(15)
       post.status = 1
       post.original = nil
     end
@@ -22,6 +23,14 @@ module UploadPosts
     Post.all.each do |post|
       post.tags << Tag.all.sample
       post.save!
+    end
+  end
+
+  def add_subscriptions
+    20.times do
+      post = Subscription.new
+      subscriber.email = Faker::Internet.email
+      subscriber.last_id = 1
     end
   end
 

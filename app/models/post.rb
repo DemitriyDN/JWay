@@ -17,6 +17,14 @@ class Post < ActiveRecord::Base
   scope :limit_rand, ->(num) { limit(num).order('RANDOM()') }
   scope :get_first, ->(id) { where('id= ?', id).first }
 
+  def self.with_search query
+    if query
+      where('title like ?', "%#{query}%")
+    else
+      scoped
+    end
+  end
+
   def self.reject_blank param
     param[:tag_ids] = param[:tag_ids].reject(&:empty?)
     param
