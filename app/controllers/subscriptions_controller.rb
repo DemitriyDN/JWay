@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    subscription = Subscription.new(subscription_params)
+    subscription = Subscription.new(subscription_params.merge(last_id: find_last_id))
 
     if subscription.save
       flash[:notice] = 'Подписка оформленна!'
@@ -23,5 +23,9 @@ class SubscriptionsController < ApplicationController
   private
   def subscription_params
     params.require(:subscription).permit( :email, :last_id )
+  end
+
+  def find_last_id
+    Post.available_for(current_user).maximum(:id)
   end
 end

@@ -18,8 +18,12 @@ class Post < ActiveRecord::Base
   scope :get_first, ->(id) { where('id= ?', id).first }
 
   def self.with_search query
+    Rails.logger.info '>>>>>'*20
+    Rails.logger.info query
+    Rails.logger.info '>>>>>'*20
+
     if query
-      where('title like ?', "%#{query}%")
+      includes('tags').where("tags.name ILIKE :query OR title ILIKE :query", { query: "%#{query}%" }).references(:tags)
     else
       all
     end
