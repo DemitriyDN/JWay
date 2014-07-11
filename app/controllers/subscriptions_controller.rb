@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-  before_filter :authenticate_user!, only: [:index, :delete]
+  before_filter :authenticate_user!, only: [:index]
 
   def index
     @subscriptions = Subscription.all
@@ -17,7 +17,11 @@ class SubscriptionsController < ApplicationController
     redirect_to root_path
   end
 
-  def delete
+  def destroy
+    @subscription = Subscription.find(params[:id])
+    @subscription.destroy
+
+    redirect_to subscriptions_path, notice: 'Subscription was deleted!'
   end
 
   private

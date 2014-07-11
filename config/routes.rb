@@ -7,6 +7,6 @@ JuniorWay::Application.routes.draw do
     post 'swich_state', on: :collection
   end
 
-  resources :subscriptions, only: [:index, :create, :delete]
-
+  resources :subscriptions, only: [:index, :create, :destroy]
+  resources :tags
 end
