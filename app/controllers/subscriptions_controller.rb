@@ -1,13 +1,20 @@
-class Subscription < ApplicationController
-  before_filter :authenticate_user!, only: [:index]
+class SubscriptionsController < ApplicationController
+  before_filter :authenticate_user!, only: [:index, :delete]
 
   def index
     @subscriptions = Subscription.all
   end
 
   def create
-    Subscription.create(subscription_params)
-    render nothing: true
+    subscription = Subscription.new(subscription_params)
+
+    if subscription.save
+      flash[:notice] = 'Подписка оформленна!'
+    else
+      flash[:alert] = subscription.errors.full_messages.join(', ')
+    end
+
+    redirect_to root_path
   end
 
   def delete

@@ -5,17 +5,5 @@
 
   <%= render partial: 'posts/common/tags', locals: { tags: @tags } %>
   <%= render partial: 'posts/common/relative_posts', locals: { posts: @relative_posts } %>
-
-  <div class='sidebar-box'>
-    <div class='sidebar-title'>Подписка на рассылку</div>
-    <hr>
-    <p>
-      The Modulus monthly newsletter brings you exclusive content only available
-      to subscribers and the best Node.js material from around the web.
-    </p>
-    <div class='email'>
-      <label for='email'>Email: </label>
-      <input name='email' type='email' placeholder='some@gmail.com'>
-    </div>
-  </div>
+  <%= render partial: 'shared/subscription_sidebar', locals: { last_id: @posts.last.id } %>
 </div>

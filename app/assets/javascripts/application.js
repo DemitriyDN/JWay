@@ -24,7 +24,6 @@ $(function() {
     }).done(function() {
       flash = "<div id='flash_message_notification' class='alert alert-success'><strong>Пост поменял состояние </strong></div>"
       $('#main').prepend(flash);
-
     });
   });
 });

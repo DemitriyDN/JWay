@@ -1,0 +1,7 @@
+<tr>
+  <td><%= subscription.id %></td>
+  <td><%= subscription.email %></td>
+  <td>
+    <%= link_to 'delete', subscriptions_path(subscription.id), method: :delete, confirm: 'Вы уверены?', class: 'btn btn-danger' %>
+  </td>
+</tr>

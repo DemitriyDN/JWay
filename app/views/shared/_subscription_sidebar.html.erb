@@ -1,0 +1,17 @@
+<div class='sidebar-box'>
+  <div class='sidebar-title'>Подписка на рассылку</div>
+  <hr>
+  <p>
+    The Modulus monthly newsletter brings you exclusive content only available
+    to subscribers and the best Node.js material from around the web.
+  </p>
+
+  <div class='email'>
+
+    <%= form_for Subscription.new do |f| %>
+      <%= f.label :email, 'Email: ' %>
+      <%= f.email_field :email, placeholder: 'some@gmail.com' %>
+      <%= f.hidden_field :last_id, value: last_id  %>
+    <% end %>
+  </div>
+</div>
