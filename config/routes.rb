@@ -7,6 +7,10 @@ JuniorWay::Application.routes.draw do
     post 'swich_state', on: :collection
   end
 
-  resources :subscriptions, only: [:index, :create, :destroy]
+  resources :subscriptions, only: [:index, :create, :destroy] do
+    get 'send_reminder', on: :collection
+    get 'delete_notifier', on: :collection
+  end
+
   resources :tags
 end

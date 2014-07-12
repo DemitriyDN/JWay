@@ -1,6 +1,7 @@
 <tr>
   <td><%= subscription.id %></td>
   <td><%= subscription.email %></td>
+  <td><%= subscription.last_id %></td>
   <td>
     <%= link_to 'delete', subscription_path(subscription), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %>
   </td>

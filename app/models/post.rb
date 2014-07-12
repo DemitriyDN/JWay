@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
   scope :available_for, -> (user) { user ? by_date : where(status: 1).by_date }
   scope :limit_rand, ->(num) { limit(num).order('RANDOM()') }
   scope :get_first, ->(id) { where('id= ?', id.to_i).first }
+  scope :get_last_availible_id, -> { where(status: 1).last.id }
 
   def self.with_search query
     if query

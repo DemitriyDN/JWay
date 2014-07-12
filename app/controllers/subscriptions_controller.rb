@@ -24,6 +24,20 @@ class SubscriptionsController < ApplicationController
     redirect_to subscriptions_path, notice: 'Subscription was deleted!'
   end
 
+  def send_reminder
+    last_id = Post.get_last_availible_id
+    Subscription.send_notification_with(last_id)
+
+    redirect_to subscriptions_path, notice: 'Subscription was sent!'
+  end
+
+  def delete_notifier
+    subscriber = Subscription.where(email: params[:email]).first
+    subscriber.delete
+
+    redirect_to root_path, notice: 'Подписка удалена!'
+  end
+
   private
   def subscription_params
     params.require(:subscription).permit( :email, :last_id )
