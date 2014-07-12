@@ -34,6 +34,7 @@ class PostsController < ApplicationController
   def edit
     find_post
     find_tags
+    render :new
   end
 
   def update

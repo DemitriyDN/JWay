@@ -7,7 +7,7 @@
       <%= render partial: 'posts/common/post_tags', locals: { tags: @tags } %>
       <div class='clear'></div>
 
-      <%= render partial: 'posts/common/post_body', locals: { body: @post.body } %>
+      <%= render partial: 'posts/common/post_body', locals: { body: @post.body, src_img: @post.title_img } %>
       <%= render partial: 'posts/shared/back', locals: { article: @post } %>
     </article>
   </div>

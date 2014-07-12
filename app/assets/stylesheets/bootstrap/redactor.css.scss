@@ -1,8 +1,12 @@
 //= require redactor-rails
 
 // Redactror Rails START
-.redactor_box .redactor_redactor {
-  height: 200px;
+.redactor_box {
+  width: 955px;
+  height: 400px;
+}
+#post_body.redactor {
+  height: 368px !important;
 }
 // Redactror Rails END
 
@@ -14,15 +18,20 @@
     width: 160px;
     padding-top: 5px;
     text-align: right;
+    font-weight: bold;
   }
 
   .controls {
     margin-left: 180px;
 
+    input[type='text'], .post_body_title {
+      font-size: 14px;
+      line-height: 18px;
+      width: 500px;
+    }
+
     input {
-      display: inline-block;
       margin-bottom: 0;
-      vertical-align: middle;
       vertical-align: baseline;
     }
 
@@ -43,4 +52,8 @@
       cursor: pointer;
     }
   }
+}
+#post_body_title {
+  width: 950px;
+  height: 150px;
 }

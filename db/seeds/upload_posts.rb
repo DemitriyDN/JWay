@@ -16,7 +16,9 @@ module UploadPosts
   end
 
   def add_tags
-    tags = ['rake', 'rack', 'sublime', 'rails', 'ruby', 'sql']
+    tags = ['HTML', 'CSS', 'Rake', 'Rack', 'Sublime', 'Ruby On Rails', 'Ruby', 'SQL',
+            'ActiveRecord', 'TDD', 'RSpec', 'JavaScript', 'Git', 'Gem', 'RVM', 'jQuery']
+
     tags.each do |tag|
       Tag.create!({ name: tag })
     end
