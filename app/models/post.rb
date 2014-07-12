@@ -15,15 +15,11 @@ class Post < ActiveRecord::Base
   scope :by_date, -> { order('created_at DESC') }
   scope :available_for, -> (user) { user ? by_date : where(status: 1).by_date }
   scope :limit_rand, ->(num) { limit(num).order('RANDOM()') }
-  scope :get_first, ->(id) { where('id= ?', id).first }
+  scope :get_first, ->(id) { where('id= ?', id.to_i).first }
 
   def self.with_search query
-    Rails.logger.info '>>>>>'*20
-    Rails.logger.info query
-    Rails.logger.info '>>>>>'*20
-
     if query
-      includes('tags').where("tags.name ILIKE :query OR title ILIKE :query", { query: "%#{query}%" }).references(:tags)
+      includes(:tags).where("tags.name ILIKE :query OR title ILIKE :query", { query: "%#{query}%" }).references(:tags)
     else
       all
     end
@@ -40,5 +36,9 @@ class Post < ActiveRecord::Base
     else
       self.verification!
     end
+  end
+
+  def to_param
+    "#{id}-#{title}".parameterize
   end
 end

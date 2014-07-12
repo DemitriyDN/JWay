@@ -1,24 +1,17 @@
 <header>
-	<h1 id='logo'>
-		<a href='/' title='J-Way Home'>
-			<%= image_tag 'logo/j-way.png', alt: 'J-Way' %>
-		</a>
-	</h1>
+  <h1 id='logo'>
+    <a href='/' title='J-Way Home'>
+      <%= image_tag 'logo/j-way.png', alt: 'J-Way' %>
+    </a>
+  </h1>
 
-	<div class='tagline'>
-		<%= image_tag 'logo/rails-junior-way.png', alt: 'Rails Junior Way' %>
-	</div>
-<!-- 
-	<div class='search'>
-		<form action='/search' method='GET' class='search-form'>
-			<input type='text' placeholder='search' name='q'>
-		</form>
-	</div>
- -->
-<div class='search'>
-<%= form_tag(posts_path, method: 'get', class: 'search-form') do %>
-  <%= text_field_tag :search, params[:search], placeholder: 'Поиск' %>
-<% end %>
-</div>
+  <div class='tagline'>
+    <%= image_tag 'logo/rails-junior-way.png', alt: 'Rails Junior Way' %>
+  </div>
 
+  <div class='search'>
+    <%= form_tag(posts_path, method: 'get', class: 'search-form') do %>
+      <%= text_field_tag :search, params[:search], placeholder: 'Поиск' %>
+    <% end %>
+  </div>
 </header>

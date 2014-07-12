@@ -70,3 +70,29 @@
     margin-top: 10px;
   }
 }
+
+.post_tags_box {
+  text-align: right;
+  margin: 0 0 3px 0;
+  float: right;
+
+  .post_tags {
+
+    li {
+      display: inline-block;
+      background-color: #fff;
+      border: 1px solid #bbb;
+      padding: 0 6px;
+      white-space: nowrap;
+      font-size: 11px;
+      line-height: 19px;
+      border-radius: 3px;
+      max-width: 150px;
+      margin: 0px 0px 5px 5px;
+
+      a {
+        color: #353434;
+      }
+    }
+  }
+}

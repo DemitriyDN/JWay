@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.available_for(current_user).with_search(params[:search]).page(params[:page]).per(3)
-    @tags  = Tag.all
+    @posts = @posts.includes(:tags).references(:tags)
+    find_tags
   end
 
   def show
@@ -17,7 +18,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @tags = Tag.all
+    find_tags
   end
 
   def create
@@ -25,13 +26,14 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: 'Post is successfully created!'
     else
-      @tags = Tag.all
+      find_tags
       render :new
     end
   end
 
   def edit
     find_post
+    find_tags
   end
 
   def update
@@ -53,6 +55,10 @@ class PostsController < ApplicationController
   private
   def find_post
     @post = Post.available_for(current_user).get_first(params[:id])
+  end
+
+  def find_tags
+    @tags = Tag.all
   end
 
   def post_params

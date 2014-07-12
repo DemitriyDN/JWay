@@ -4,7 +4,7 @@
 
     <article class='post'>
       <%= render partial: 'posts/common/title', locals: { article: @post } %>
-
+      <%= render partial: 'posts/common/post_tags', locals: { tags: @tags } %>
       <div class='clear'></div>
 
       <%= render partial: 'posts/common/post_body', locals: { body: @post.body } %>

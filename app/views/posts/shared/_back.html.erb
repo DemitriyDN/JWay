@@ -1,5 +1,6 @@
 <div class='read_mode'>
   <%= link_to 'Назад', :back %>
+  <%= link_to 'Edit', edit_post_path(article.id) if current_user %>
 </div>
 
 <%= approve_switch(current_user, article) %>

@@ -21,10 +21,10 @@ module ApplicationHelper
     content_tag(:div, l(date) , class: 'date')
   end
 
-  def tags_displaying tags
-    content_tag(:ul, class: 'tags') do
-      tags.each do |item|
-        concat content_tag(:li, link_to(item.name, '#') )
+  def tags_displaying tags, in_post = false
+    content_tag(:ul, class: in_post ? 'post_tags' : 'tags') do
+      tags.each do |tag|
+        concat content_tag(:li, link_to( tag.name, posts_path(search: tag.name )))
       end
     end
   end
