@@ -2,6 +2,13 @@
   <%= form_for @post do |f| %>
 
   <div class='control-group'>
+    <label class='control-label'>Photos:</label>
+    <div class='controls'>
+      <a id='photos' href='http://fotki.yandex.ru/' target='_blank' >Photos</a>
+    </div>
+  </div>
+
+  <div class='control-group'>
     <label class='control-label'>Original:</label>
     <div class='controls'>
       <%= f.text_field :original, placeholder: 'http://...' %>
