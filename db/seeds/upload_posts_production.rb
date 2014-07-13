@@ -24,7 +24,65 @@ module UploadProduction
         <a href="mailto:j.way.rails@gmail.com">j.way.rails@gmail.com</a>
       </p>
     '
-    post.status = 0
+    post.status = 1
+    post.original = nil
+    post.save!
+  end
+
+  def add_highliter_post
+    post = Post.new
+    post.title = 'Памятка!'
+    post.title_img = ''
+    post.body_title = 'Syntax Highliter'
+    post.body = <<-TEXT
+      <p>
+        Syntax Highliter
+      </p>
+
+      <blockquote>
+        &nbsp;Post.rb
+      </blockquote>
+      <pre class="brush: ruby; first-line: 10; toolbar: false; highlight: [12, 14, 16]">
+      # Post.rb
+      class Post &lt; ActiveRecord::Base
+        has_and_belongs_to_many :tags
+
+        validates :title,
+                  :body,
+                  :body_title, presence: true
+        DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : 'j-way-rails'.freeze
+
+        enum status: {
+          verification: 0,
+          approved: 1
+        }
+
+        scope :by_date, -&gt; { order('created_at DESC') }
+        scope :available_for, -&gt; (user) { user ? by_date : where(status: 1).by_date }
+        scope :limit_rand, -&gt;(num) { limit(num).order('RANDOM()') }
+        scope :get_first, -&gt;(id) { where('id= ?', id.to_i).first }
+        scope :get_last_availible_id, -&gt; { where(status: 1).last.id }
+
+        def self.reject_blank param
+          param[:tag_ids] = param[:tag_ids].reject(&:empty?)
+          param
+        end
+        def update_state state
+          if state == 'true'
+            self.approved!
+          else
+            self.verification!
+          end
+        end
+      end
+      </pre>
+
+      <p>
+        Some new
+      </p>
+    TEXT
+
+    post.status = 1
     post.original = nil
     post.save!
   end
@@ -42,5 +100,5 @@ module UploadProduction
     User.create!({ email: 'nick-supernick@gmail.com', password: 'password' })
   end
 
-  module_function :add_posts, :add_tags, :add_user
+  module_function :add_posts, :add_tags, :add_user, :add_highliter_post
 end

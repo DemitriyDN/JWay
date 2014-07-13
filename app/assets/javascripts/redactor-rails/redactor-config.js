@@ -6,7 +6,8 @@ $(function () {
     params = csrf_param + "=" + encodeURIComponent(csrf_token);
   }
   $('.redactor').redactor(
-    { "path":"/assets/redactor-rails",
+    { wym: true,
+      "path":"/assets/redactor-rails",
       "css":"style.css",
       'buttons': ['html', 'formatting',  'bold', 'italic', 'deleted',
                   'unorderedlist', 'orderedlist', 'outdent', 'indent', 'table',
