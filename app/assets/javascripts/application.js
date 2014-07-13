@@ -13,7 +13,9 @@
 //= require_tree ./bootstrap
 
 $(function() {
-  SyntaxHighlighter.all();
+  if ( $('.posts.show').length === 1 ){
+    SyntaxHighlighter.all();
+  };
 
   $('.activate-article').bootstrapSwitch();
   $('.activate-article').on('switchChange.bootstrapSwitch', function(event, state) {
