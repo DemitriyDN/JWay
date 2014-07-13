@@ -10,7 +10,7 @@ $(function () {
       "path":"/assets/redactor-rails",
       "css":"style.css",
       'buttons': ['html', 'formatting',  'bold', 'italic', 'deleted',
-                  'unorderedlist', 'orderedlist', 'outdent', 'indent', 'table',
-                  'link', 'underline', 'alignleft', 'aligncenter', 'alignright', 'justify']}
+                  'unorderedlist', 'orderedlist',
+                  'link', 'underline', 'alignleft', 'aligncenter', 'alignright']}
   );
 });
