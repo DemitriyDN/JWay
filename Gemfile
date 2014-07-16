@@ -11,7 +11,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'devise'
-gem 'redactor-rails'
 gem 'kaminari'
 gem 'acts-as-taggable-on'
 
