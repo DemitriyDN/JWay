@@ -1,6 +1,4 @@
 module ApplicationHelper
-  include ActsAsTaggableOn::TagsHelper
-
   def page_title title_text
     content_for :title, "JWay - #{title_text}"
   end
@@ -10,7 +8,7 @@ module ApplicationHelper
   end
 
   def original original_link
-    if original_link
+    if original_link.present?
       link_to original_link, 'Original'
     else
       'No Original'
@@ -31,7 +29,11 @@ module ApplicationHelper
 
   def approve_switch user, post
     if user
-      check_box_tag 'post_switcher' , :status , post.approved?,  data: { 'id' => post.id } ,class: 'activate-article'
+      check_box_tag 'post_switcher' , :status , post.approved?,  data: { 'id' => post.id }, class: 'activate-article'
     end
+  end
+
+  def markdown content
+    content.html_safe
   end
 end

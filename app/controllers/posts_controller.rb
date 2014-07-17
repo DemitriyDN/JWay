@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(Post.reject_blank(post_params))
     if @post.save
-      redirect_to root_path, notice: 'Post is successfully created!'
+      redirect_to post_path(@post), notice: 'Post is successfully created!'
     else
       find_tags
       render :new
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def update
     find_post
     if @post.update_attributes!(post_params)
-      redirect_to root_path, notice: 'Post is successfully updated!'
+      redirect_to post_path(@post), notice: 'Post is successfully updated!'
     else
       render :edit
     end

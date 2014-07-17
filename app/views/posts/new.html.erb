@@ -1,4 +1,4 @@
-<div id='content' class='content-col col'>
+<div id='content' class='content-col col admin_pages'>
   <%= form_for @post do |f| %>
 
   <div class='control-group'>
@@ -39,7 +39,7 @@
   <div class='control-group'>
     <label class='control-label'>Article:</label>
     <div class='controls undoreset'>
-      <%= f.text_area :body, placeholder: '...markdown stuff...' %>
+      <%= f.text_area :body %>
     </div>
   </div>
 

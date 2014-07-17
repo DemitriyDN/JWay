@@ -12,47 +12,15 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'kaminari'
-gem 'acts-as-taggable-on'
-
-group :doc do
-  gem 'sdoc', '~> 0.4.0'
-end
+gem 'faker'
 
 group :development do
   gem 'spring'
 
   gem 'better_errors'
   gem 'binding_of_caller'
-
-  # Not working ?
-  # gem 'pry-rails'
-  # gem 'hirb'
-
-  # => rails panel
-  gem 'meta_request'
-
-  # => brakeman -o public/safeguard/brakeman
-  gem 'brakeman', require: false
 end
 
-group :test, :development do
-  gem 'rspec-rails', '~> 3.0.0'
-  gem 'capybara'
-end
-
-group :test do
-  # => COVERAGE=true rspec spec/
-  gem 'simplecov'
-
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-
-  gem 'faker'
-
-  gem 'launchy'
-  gem 'poltergeist'
-  gem 'capybara-screenshot'
-
-  gem 'email_spec'
-  gem 'capybara-email'
-end
+gem 'redcarpet'
+gem 'pygments.rb'
+gem 'markitup-rails'

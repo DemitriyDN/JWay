@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 20140708092340) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.string   "title_img"
+    t.integer  "status",        default: 0
+    t.string   "original"
     t.text     "body_title"
     t.text     "body"
-    t.integer  "status",     default: 0
-    t.string   "original"
+    t.text     "rendered_body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

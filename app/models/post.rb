@@ -1,9 +1,14 @@
 class Post < ActiveRecord::Base
+  include Renderer
+
   has_and_belongs_to_many :tags
 
   validates :title,
             :body,
             :body_title, presence: true
+
+
+  before_save :render_body
 
   DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : 'j-way-rails'.freeze
 
@@ -42,4 +47,5 @@ class Post < ActiveRecord::Base
   def to_param
     "#{id}-#{title}".parameterize
   end
+
 end
