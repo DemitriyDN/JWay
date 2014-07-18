@@ -21,6 +21,6 @@ group :development do
   gem 'binding_of_caller'
 end
 
-gem 'redcarpet'
+gem 'redcarpet', github: 'DemitriyDN/redcarpet', branch: '306-add-class-to-image'
 gem 'pygments.rb'
 gem 'markitup-rails'
