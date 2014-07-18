@@ -81,4 +81,5 @@ a {
 
 
 .clear { clear:both; }
+.hide { display: none; }
 *:focus { outline: 0; }

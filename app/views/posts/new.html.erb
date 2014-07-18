@@ -48,11 +48,8 @@
 
     <div class='controls'>
       <%= f.select :tag_ids, options_from_collection_for_select( @tags, :id, :name, f.object.tag_ids ),
-                              {},
-                              { multiple: true,
-                                tabindex: 4,
-                                class: 'chosen-select',
-                                'data-placeholder' => 'Выберите тег...' } %>
+      {},
+      { multiple: true, tabindex: 4, class: 'chosen-select', 'data-placeholder' => 'Выберите тег...' } %>
     </div>
   </div>
 
@@ -63,4 +60,6 @@
     </div>
   </div>
   <% end %>
+
+  <%= render 'posts/shared/code_insertion_modal' %>
 </div>

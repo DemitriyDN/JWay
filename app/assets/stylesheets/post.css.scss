@@ -114,9 +114,11 @@ article.post {
         margin-right: 1.5em;
       }
       &.right {
-
         float: right;
         margin-left: 1.5em;
+      }
+      &.center {
+        width: 100%;
       }
     }
 
