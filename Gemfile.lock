@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/DemitriyDN/redcarpet.git
-  revision: bed037483b9f2e69b9db53223b557c876006b82c
+  revision: 4ff30ad2a9c6bfe78124ac854680468790c1ad8d
   branch: 306-add-class-to-image
   specs:
     redcarpet (3.1.1)
