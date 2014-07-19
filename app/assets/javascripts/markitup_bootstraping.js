@@ -33,13 +33,16 @@ $(function() {
 
       { name:'Picture', replaceWith:'![[![Alternative text]!]]([![Url:!:http://]!] "[![Title]!]")' },
       { name:'Link', openWith:'[', closeWith:']([![Url:!:http://]!] "[![Title]!]")', placeHolder:'Your text to link here...' },
+
       { separator:'---------------' },
-      { name:'Code Block / Codees',
+
+      { name: 'Code Block / Codees',
           className: 'code_insertion',
           beforeInsert: function() {
             $('#codeInsertionModal').show();
           }
-      }
+      },
+      { name: 'Inline code', openWith:'<code>', closeWith:'</code>' }
     ]
   };
 
@@ -97,7 +100,7 @@ $(function() {
     }
 
     $.markItUp({
-      openWith:'~~~ ' + string_to_parse + '\n',
+      openWith:'\n~~~ ' + string_to_parse + '\n',
       closeWith: '\n~~~\n'
     });
 
