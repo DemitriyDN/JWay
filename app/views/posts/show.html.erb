@@ -2,6 +2,8 @@
   <div id='post-index'>
     <%= render partial: 'posts/common/info', locals: { article: @post } %>
 
+    <div class='sidebar_closing'><div class='right'></div></div>
+
     <article class='post'>
       <%= render partial: 'posts/common/title', locals: { article: @post } %>
       <%= render partial: 'posts/common/post_tags', locals: { tags: @tags } %>

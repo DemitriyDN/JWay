@@ -184,7 +184,7 @@ article.post {
         position: absolute;
         width: 10px;
         height: 10px;
-        top: 1px;
+        top: -1px;
         right: 19px;
         opacity: 0.5;
       }
@@ -228,5 +228,36 @@ article.post {
   }
   .bootstrap-switch {
     float: right;
+  }
+}
+
+.sidebar_closing {
+  float: right;
+  width: 20px;
+  height: 30px;
+  background-color: #C0C0C0;
+  color: #000;
+  border: 1px solid #5F5F5F;
+  cursor: pointer;
+  text-align: center;
+  margin-left: -1px;
+  margin-top: 10px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+
+  .left, .right {
+    margin-top: 5px;
+  }
+
+  .left {
+    &::after {
+      content: "\00AB";
+    }
+  }
+
+  .right {
+    &::after {
+      content: "\00BB";
+    }
   }
 }
