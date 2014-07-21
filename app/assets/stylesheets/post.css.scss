@@ -1,4 +1,8 @@
 article.post {
+  &.opened_post {
+    width: 905px;
+  }
+
   padding: 6px 20px 20px 20px;
   width: 620px;
   margin-bottom: 25px;
@@ -191,6 +195,7 @@ article.post {
     }
   }
   .post-img {
+    text-align: center;
     img {
       border: 1px solid #5F5F5F;
       width: 618px;

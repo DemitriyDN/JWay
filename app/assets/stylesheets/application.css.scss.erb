@@ -20,7 +20,8 @@ body {
   background-image: url(<%= asset_path 'background.jpg' %>);
 
   #main {
-    width: 1180px;
+    overflow-x: hidden;
+    width: 1190px;
     margin: 0 auto;
 
     header {
@@ -128,13 +129,18 @@ body {
 
       #sidebar {
         font-size: 12px;
-
         &.sidebar-col {
           width: 280px;
           float: right;
+          margin-right: 10px;
+
+          &.closed_sidebar {
+            width: 0;
+          }
         }
 
         .sidebar-box {
+          width: 235px;
           box-shadow: 0 0 20px rgba(0,0,0,0.2);
           background: #f3f3f3;
           border: 1px solid #CFCFCF;
@@ -302,6 +308,10 @@ body {
         &.content-col {
           width: 890px;
           float: left;
+
+          &.opened_content {
+            width: 1170px;
+          }
         }
       }
     }

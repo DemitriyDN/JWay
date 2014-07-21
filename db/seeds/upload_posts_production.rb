@@ -97,7 +97,7 @@ module UploadProduction
   end
 
   def add_user
-    User.create!({ email: 'nick-supernick@gmail.com', password: 'password' })
+    User.create!({ email: 'nick-supernick@gmail.com', password: 'epyfnm' })
   end
 
   module_function :add_posts, :add_tags, :add_user, :add_highliter_post

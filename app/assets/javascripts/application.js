@@ -6,6 +6,7 @@
 //= require_tree ./bootstrap
 
 //= require post_state_swiching
+//= require side_bar_toggler
 //= require markitup
 //= require markitup/sets/markdown/set
 //= require markitup_bootstraping
