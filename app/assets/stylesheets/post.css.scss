@@ -147,6 +147,30 @@ article.post {
         color: #1863A1;
       }
     }
+
+    table.simple {
+      margin: 0 auto;
+      border: 1px solid #d3d3d3;
+      background: #fefefe;
+      font-size: 12px;
+
+      th, td {
+        vertical-align: middle;
+        padding: 5px;
+        text-align: center;
+      }
+
+      th {
+        padding-top: 5px;
+        text-shadow: 1px 1px 1px #fff;
+        background: #e8eaeb;
+      }
+
+      td {
+        border-top: 1px solid #e0e0e0;
+        border-right: 1px solid #e0e0e0;
+      }
+    }
   }
 
   .title {
