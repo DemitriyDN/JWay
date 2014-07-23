@@ -42,7 +42,7 @@ $(function() {
             $('#codeInsertionModal').show();
           }
       },
-      { name: 'Inline code', openWith:'<code>', closeWith:'</code>' }
+      { name: 'Inline code', key:'K', openWith:'<code>', closeWith:'</code>' }
     ]
   };
 
@@ -79,6 +79,15 @@ $(function() {
   codeInsertionModal.find('.save').on('click', function(){
     if ( no_number.prop('checked') ){
       string_to_parse = 'lang===' + language.val() + '###no_numbers===true'
+
+      if ( title.val() ){
+        string_to_parse += '###title===' + title.val()
+      }
+
+      if ( link.val() ){
+        string_to_parse += '###link===' + link.val()
+      }
+
     } else {
       string_to_parse = 'lang===' + language.val();
 

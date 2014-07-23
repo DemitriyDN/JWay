@@ -39,5 +39,7 @@ $(function() {
     })
   }
 
-  sidebarToggleInit();
+  if ($('body').hasClass('posts') && $('body').hasClass('show')){
+    sidebarToggleInit();
+  };
 });
