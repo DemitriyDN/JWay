@@ -38,6 +38,7 @@ $(function() {
 
       { name: 'Code Block / Codees',
           className: 'code_insertion',
+          key:'J',
           beforeInsert: function() {
             $('#codeInsertionModal').show();
           }
