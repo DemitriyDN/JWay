@@ -24,3 +24,13 @@ end
 gem 'redcarpet', github: 'DemitriyDN/redcarpet', branch: '306-add-class-to-image'
 gem 'pygments.rb'
 gem 'markitup-rails'
+
+
+# Production
+gem 'unicorn'
+gem 'capistrano', '~> 2.15'
+gem 'rvm-capistrano'
+
+# # ???
+gem 'therubyracer'
+gem 'execjs'
