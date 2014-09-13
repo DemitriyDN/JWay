@@ -1,0 +1,18 @@
+<div class='admin_pages'>
+  <blockquote>
+    <h3>Теги:</h3>
+  </blockquote>
+
+  <table class='table table-striped table-bordered'>
+    <tr>
+      <th style='width: 150px'>Tags name</th>
+      <th style='width: 50px'>Edit</th>
+      <th style='width: 50px'>Destroy</th>
+    </tr>
+    <tbody>
+      <%= render @tags %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Add Tag', new_tag_path, class: 'btn btn-primary' %>
+</div>

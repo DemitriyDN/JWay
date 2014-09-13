@@ -8,7 +8,6 @@ doc/
 .project
 .DS_Store
 .idea
-tags
 config/database.yml
 public/uploads
 public/images

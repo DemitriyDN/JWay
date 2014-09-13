@@ -1,0 +1,24 @@
+<legend><h3>Create new tag:</h3></legend>
+
+<div>
+  <%= form_for @tag do |f| %>
+
+    <div class='control-group'>
+      <div class='controls'>
+        <div class='input-prepend'>
+          <span class='add-on'><i class='icon-th-list'></i></span>
+          <%= f.text_field :name, placeholder: 'Tag', autofocus: true %>
+        </div>
+      </div>
+    </div>
+
+    <div class='control-group'>
+      <div class='controls'>
+        <%= f.submit 'Add', class: 'btn btn-success' %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+<%= link_to 'All tags', tags_path, class: 'btn btn-inverse btn_back' %>

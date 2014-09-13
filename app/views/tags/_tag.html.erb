@@ -1,0 +1,9 @@
+<tr>
+  <td><%= tag.name %></td>
+  <td>
+    <%= link_to 'Edit', edit_tag_path(tag.id), class: 'btn btn-primary' %>
+  </td>
+  <td>
+    <%= link_to 'Delete', tag_path(tag.id), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger'  %>
+  </td>
+</tr>

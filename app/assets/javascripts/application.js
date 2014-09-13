@@ -2,8 +2,8 @@
 //= require jquery_ujs
 //= require_self
 
-//= require tags/init
-//= require bootstrap/bootstrap-switch
+//= require_tree ./tags
+//= require_tree ./bootstrap
 
 //= require post_state_swiching
 //= require side_bar_toggler
