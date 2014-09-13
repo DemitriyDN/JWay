@@ -15,6 +15,8 @@ set :use_sudo, false
 set :scm, 'git'
 set :repository, 'git@github.com:DemitriyDN/JWay.git'
 set :branch, 'master'
+
+set :server_name, 'www.rails-junior.com rails-junior.com'
 # set :rvm_ruby_string, 'ruby-2.0.0-p451'
 # set :default_environment, 'PATH' => '$HOME/.rbenv/shims:$PATH'
 
