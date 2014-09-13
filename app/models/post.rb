@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   before_save :render_body
 
-  DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : 'j-way-rails'.freeze
+  DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : 'rails-junior'.freeze
 
   enum status: {
     verification: 0,
