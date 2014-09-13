@@ -8,7 +8,7 @@ server '178.62.154.18', :web, :app, :db, primary: true
 set :application, 'junior_way'
 set :user, 'vasin'
 set :port, 22
-set :deploy_to, "/var/#{user}/apps/#{application}"
+set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
