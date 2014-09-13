@@ -1,7 +1,6 @@
 # sudo su - vasin
 
 require 'bundler/capistrano'
-require 'delayed/recipes'
 require 'rvm/capistrano'
 
 server '178.62.154.18', :web, :app, :db, primary: true
