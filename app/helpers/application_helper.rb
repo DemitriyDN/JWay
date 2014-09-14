@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def original original_link
     if original_link.present?
-      link_to original_link, 'Original'
+      link_to 'Original', original_link
     else
       'No Original'
     end
