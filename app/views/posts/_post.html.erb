@@ -5,6 +5,6 @@
   <%= render partial: 'posts/common/post_tags', locals: { tags: post.tags } %>
   <div class='clear'></div>
 
-  <%= render partial: 'posts/common/post_body', locals: { body: post.body_title, src_img: post.title_img } %>
+  <%= render partial: 'posts/common/post_body', locals: { body: post.body_title, src_img: post.title_img, meta: post.meta } %>
   <%= render partial: 'posts/shared/show_more', locals: { article: post } %>
 </article>

@@ -63,7 +63,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit( :title, :body, :body_title, :title_img, :original, :status, tag_ids: [] )
+    params.require(:post).permit( :title, :meta, :body, :body_title, :title_img, :original, :status, tag_ids: [] )
   end
 
   def swich_params

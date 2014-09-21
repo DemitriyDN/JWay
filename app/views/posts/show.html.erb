@@ -1,3 +1,5 @@
+<%= render partial: 'shared/meta/show', locals: { post: @post } %>
+
 <div id='content' class='content-col col'>
   <div id='post-index'>
     <%= render partial: 'posts/common/info', locals: { article: @post } %>
@@ -9,7 +11,7 @@
       <%= render partial: 'posts/common/post_tags', locals: { tags: @tags } %>
       <div class='clear'></div>
 
-      <%= render partial: 'posts/common/post_body', locals: { body: @post.rendered_body, src_img: @post.title_img } %>
+      <%= render partial: 'posts/common/post_body', locals: { body: @post.rendered_body, src_img: @post.title_img, meta: @post.meta } %>
       <%= render partial: 'posts/shared/back', locals: { article: @post } %>
     </article>
   </div>

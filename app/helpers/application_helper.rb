@@ -36,4 +36,8 @@ module ApplicationHelper
   def markdown content
     content.html_safe
   end
+
+  def combine post_tags
+    post_tags.pluck(:name).join(', ')
+  end
 end

@@ -1,0 +1,13 @@
+<% content_for :meta do %>
+  <meta content="<%= post.title %>" name="title">
+  <meta content="<%= post.body_title %>" name="description">
+  <meta content="<%= combine(post.tags) %>" name="tags">
+  <meta content="<%= post.meta %>" name="keywords">
+
+  <meta content="rails-junior.com" name="og:site_name">
+  <meta content="<%= post.title %>" name="og:title">
+  <meta content="article" name="og:type">
+  <meta content="<%= post_url(post) %>" name="og:url">
+  <meta content="<%= post.title_img %>" name="og:image">
+  <meta content="<%= post.body_title %>" name="og:description">
+<% end %>

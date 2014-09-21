@@ -31,6 +31,5 @@ gem 'unicorn'
 gem 'capistrano', '~> 2.15'
 gem 'rvm-capistrano'
 
-# # ???
 gem 'therubyracer'
 gem 'execjs'
