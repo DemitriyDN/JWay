@@ -78,6 +78,6 @@ JuniorWay::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  GA.tracker = 'UA-41090650-3'
-  GA.script_source = :doubleclick
+  # GA.tracker = 'UA-41090650-3'
+  # GA.script_source = :doubleclick
 end
