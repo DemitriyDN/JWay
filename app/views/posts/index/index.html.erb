@@ -1,0 +1,13 @@
+<%= render partial: 'shared/meta/index' %>
+
+<div id='content' class='content-col col'>
+  <%= render partial: 'posts/index/paginator', locals: { posts: @posts, position: 'top' } %>
+
+  <div id='post-index'>
+    <%= render partial: 'posts/index/post', collection: @posts %>
+  </div>
+
+  <%= render partial: 'posts/index/paginator', locals: { posts: @posts, position: 'bottom' } %>
+</div>
+
+<%= render partial: 'posts/index/index_sidebar', locals: { tags: @tags } %>

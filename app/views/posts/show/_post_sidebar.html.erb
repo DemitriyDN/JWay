@@ -1,0 +1,9 @@
+<div id='sidebar' class='sidebar-col col'>
+  <div class='sidebar-box'>
+    <%= render 'posts/common/please_note' %>
+  </div>
+
+  <%= render partial: 'posts/show/relative_posts', locals: { posts: @relative_posts } %>
+  <%= render partial: 'posts/common/subscription_sidebar' %>
+</div>
+<div class='clear'></div>

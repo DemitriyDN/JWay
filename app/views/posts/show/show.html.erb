@@ -9,16 +9,14 @@
     <article class='post'>
       <%= render partial: 'posts/common/title', locals: { article: @post } %>
       <%= render partial: 'posts/common/post_tags', locals: { tags: @tags } %>
-      <div class='clear'></div>
-
       <%= render partial: 'posts/common/post_body', locals: { body: @post.rendered_body, src_img: @post.title_img, meta: @post.meta } %>
-      <%= render partial: 'posts/shared/back', locals: { article: @post } %>
+      <%= render partial: 'posts/show/back', locals: { article: @post } %>
     </article>
   </div>
 
   <div id='comments-wrapper'>
-    <%= render partial: 'posts/comments/post_comments', locals: { post: @post } %>
+    <%= render partial: 'posts/show/post_comments', locals: { post: @post } %>
   </div>
 </div>
 
-<%= render 'posts/common/post_sidebar' %>
+<%= render 'posts/show/post_sidebar' %>
