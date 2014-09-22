@@ -14,6 +14,8 @@ gem 'devise'
 gem 'kaminari'
 gem 'faker'
 
+gem 'google-analytics-rails'
+
 group :development do
   gem 'spring'
 
