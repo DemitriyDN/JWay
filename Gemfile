@@ -29,6 +29,7 @@ gem 'markitup-rails'
 
 # Production
 gem 'google-analytics-rails'
+gem 'newrelic_rpm'
 
 gem 'unicorn'
 gem 'capistrano', '~> 2.15'
