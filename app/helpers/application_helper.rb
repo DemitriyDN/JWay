@@ -1,6 +1,6 @@
 module ApplicationHelper
   def page_title title_text
-    content_for :title, "JWay - #{title_text}"
+    content_for :title, "| #{title_text}"
   end
 
   def comments_count post
