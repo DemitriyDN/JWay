@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @tags = Tag.order('name')
+    @tags = Tag.by_name
   end
 
   def new
