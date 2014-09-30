@@ -20,6 +20,9 @@ group :development do
 
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'brakeman', :require => false
+  # brakeman -o public/brakeman.html
 end
 
 gem 'redcarpet', github: 'DemitriyDN/redcarpet', branch: '306-add-class-to-image'
