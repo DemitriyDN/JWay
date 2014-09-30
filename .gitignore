@@ -14,4 +14,4 @@ public/images
 public/safeguard
 vendor/ruby
 public/brakeman.html
-# config/secrets.yml
+config/secrets.yml
