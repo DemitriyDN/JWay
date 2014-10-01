@@ -15,3 +15,4 @@ public/safeguard
 vendor/ruby
 public/brakeman.html
 config/secrets.yml
+backup/*
