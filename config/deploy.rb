@@ -1,5 +1,8 @@
 # sudo su - vasin
 
+# sudo service unicorn_junior_way stop
+# sudo service unicorn_junior_way start
+
 require 'bundler/capistrano'
 require 'rvm/capistrano'
 
