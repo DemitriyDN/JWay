@@ -14,6 +14,15 @@
 
     <div class='control-group'>
       <div class='controls'>
+        <div class='input-prepend'>
+          <span class='add-on'><i class='icon-th-list'></i></span>
+          <%= f.select :priority, Tag::PRIORITY_RANGE, selected: f.object.priority, prompt: 'Select priority' %>
+        </div>
+      </div>
+    </div>
+
+    <div class='control-group'>
+      <div class='controls'>
         <%= f.submit 'Add', class: 'btn btn-success' %>
       </div>
     </div>

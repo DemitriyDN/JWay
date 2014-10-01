@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @tags = Tag.by_name
+    @tags = Tag.all
   end
 
   def new
@@ -40,6 +40,6 @@ class TagsController < ApplicationController
 
   private
   def tags_params
-    params.require(:tag).permit( :name )
+    params.require(:tag).permit( :name, :priority )
   end
 end

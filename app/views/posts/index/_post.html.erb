@@ -2,7 +2,7 @@
 
 <article class='post'>
   <%= render partial: 'posts/common/title', locals: { article: post } %>
-  <%= render partial: 'posts/common/post_tags', locals: { tags: post.tags } %>
+  <%= render partial: 'posts/common/post_tags', locals: { tags: post.tags.by_name_and_priority } %>
   <%= render partial: 'posts/common/post_body', locals: { body: post.body_title, src_img: post.title_img, meta: post.meta } %>
   <%= render partial: 'posts/index/show_more', locals: { article: post } %>
 </article>

@@ -63,7 +63,7 @@ class PostsController < ApplicationController
   end
 
   def find_tags
-    @tags = Tag.by_name
+    @tags = Tag.all
   end
 
   def post_params
