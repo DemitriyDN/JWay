@@ -14,8 +14,11 @@ gem 'devise'
 gem 'kaminari'
 gem 'faker'
 
+gem 'sunspot_rails'
 
 group :development do
+  gem 'sunspot_solr'
+
   gem 'spring'
 
   gem 'better_errors'

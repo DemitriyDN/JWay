@@ -13,6 +13,7 @@ JuniorWay::Application.routes.draw do
   end
 
   resources :tags
+  resource :search, only: [:show]
 
   get 'sitemap.xml' => 'sitemap#index', defaults: { format: 'xml' }
 end
