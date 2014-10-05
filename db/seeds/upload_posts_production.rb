@@ -63,7 +63,7 @@ module UploadProduction
         scope :get_first, -&gt;(id) { where('id= ?', id.to_i).first }
         scope :get_last_availible_id, -&gt; { where(status: 1).last.id }
 
-        def self.reject_blank param
+        def self.reject_blank_tags param
           param[:tag_ids] = param[:tag_ids].reject(&:empty?)
           param
         end

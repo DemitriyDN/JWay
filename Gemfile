@@ -15,9 +15,10 @@ gem 'kaminari'
 gem 'faker'
 
 gem 'sunspot_rails'
+gem 'progress_bar'
+gem 'sunspot_solr'
 
 group :development do
-  gem 'sunspot_solr'
 
   gem 'spring'
 

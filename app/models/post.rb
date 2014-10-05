@@ -1,10 +1,9 @@
 class Post < ActiveRecord::Base
   include Renderer
-
+  include Searchable
 
   after_create :reindex!
   after_update :reindex!
-
 
   has_and_belongs_to_many :tags
 
@@ -17,30 +16,7 @@ class Post < ActiveRecord::Base
     approved: 1
   }
 
-  # scope :by_date, -> { order('created_at DESC') }
-  # scope :available_for, -> (user) { user ? by_date : where(status: 1).by_date }
-  # scope :get_first, ->(id) { where('id= ?', id.to_i).first }
-  scope :limit_rand, ->(num) { limit(num).order('RANDOM()') }
-  scope :get_last_availible_id, -> { where(status: 1).last.id }
-
-  searchable do
-    text :title, :boost => 2
-    text :body
-    text :tags do
-      tags.map(&:name)
-    end
-    time :created_at
-  end
-
-  # def self.with_search query
-  #   if query
-  #     includes(:tags).where("tags.name ILIKE :query OR title ILIKE :query", { query: "%#{query}%" }).references(:tags)
-  #   else
-  #     all
-  #   end
-  # end
-
-  def self.reject_blank param
+  def self.reject_blank_tags param
     param[:tag_ids] = param[:tag_ids].reject(&:empty?)
     param
   end

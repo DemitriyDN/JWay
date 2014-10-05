@@ -2,7 +2,7 @@ class SitemapController < ApplicationController
   layout nil
 
   def index
-    @posts = Post.by_date
+    @posts = Post.all
 
     respond_to do |format|
       format.xml
