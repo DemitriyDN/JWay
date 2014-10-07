@@ -14,6 +14,10 @@ gem 'devise'
 gem 'kaminari'
 gem 'faker'
 
+gem 'sunspot_rails'
+gem 'progress_bar'
+gem 'sunspot_solr'
+
 group :development do
 
   gem 'spring'
