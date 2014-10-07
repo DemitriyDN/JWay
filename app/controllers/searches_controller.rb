@@ -1,7 +1,7 @@
 class SearchesController < ApplicationController
   def show
     @query = Post.search(include: [:tags]) do
-      keywords params[:search]
+      fulltext params[:search]
       order_by :created_at, :desc
       paginate page: params[:page], per_page: 10
       with(:status).equal_to('approved')

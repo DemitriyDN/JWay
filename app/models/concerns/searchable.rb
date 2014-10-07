@@ -10,7 +10,7 @@ module Searchable
     searchable do
       text :title, boost: 2
       text :body
-      text :tags do
+      text :tags, boost: 10 do
         tags.map(&:name)
       end
       string :status
