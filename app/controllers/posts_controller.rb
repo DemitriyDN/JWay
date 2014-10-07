@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_post, only: [:show, :edit, :update, :swich_state]
 
-
   def index
     @posts = Post.available_for(current_user).sort_by_date.page(params[:page]).per(10)
     @posts = @posts.includes(:tags).references(:tags)
