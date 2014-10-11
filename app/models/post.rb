@@ -2,9 +2,6 @@ class Post < ActiveRecord::Base
   include Renderer
   include Searchable
 
-  after_create :reindex!
-  after_update :reindex!
-
   has_and_belongs_to_many :tags
 
   before_save :render_body
@@ -31,11 +28,5 @@ class Post < ActiveRecord::Base
 
   def to_param
     "#{id}-#{title}".parameterize
-  end
-
-
-  private
-  def reindex!
-    Sunspot.index!(self)
   end
 end

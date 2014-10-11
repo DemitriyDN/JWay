@@ -3,6 +3,12 @@
 # sudo service unicorn_junior_way stop
 # sudo service unicorn_junior_way start
 
+# sudo service solr restart
+# RAILS_ENV=production rake sunspot:solr:start
+# RAILS_ENV=production rake sunspot:solr:stop
+# RAILS_ENV=production rake sunspot:reindex
+
+
 require 'bundler/capistrano'
 require 'rvm/capistrano'
 
