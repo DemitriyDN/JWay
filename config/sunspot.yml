@@ -2,7 +2,7 @@ production:
   solr:
     hostname: localhost
     port: 8080
-    path: '/solr/collection1'
+    path: '/solr/default'
     log_level: WARNING
     solr_home: solr
     # pid_dir: '/var/run'
