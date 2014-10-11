@@ -28,7 +28,7 @@ module ApplicationHelper
   def tags_displaying tags, in_post = false
     content_tag(:ul, class: in_post ? 'post_tags' : 'tags') do
       tags.each do |tag|
-        concat content_tag(:li, link_to( tag.name, posts_path(search: tag.name )))
+        concat content_tag(:li, link_to( tag.name, search_path(search: tag.name )))
       end
     end
   end
