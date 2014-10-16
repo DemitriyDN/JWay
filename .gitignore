@@ -17,6 +17,3 @@ vendor/ruby
 public/brakeman.html
 config/secrets.yml
 backup/*
-solr/test/*.*
-solr/development/*.*
-solr/default/data/*.*
