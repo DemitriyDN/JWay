@@ -1,27 +1,26 @@
 class Search
   class << self
-    def self.find_posts_by_query request
+    def posts_by_query request
       ids = select_posts_ids_with_query(request)
       get_posts_by(ids)
     end
 
     private
-    def self.select_posts_ids_with_query request
+    def select_posts_ids_with_query request
       query = generate_query(request)
       ActiveRecord::Base.connection.select_values(query)
     end
 
-    def self.generate_query request
+    def generate_query request
       formated_query = sanitize_request(request)
       sql_query(formated_query)
     end
 
-    def self.sanitize_request req
-      # And complit to form: 'xxxx & yyy'
-      req # Some sanitizetion...
+    def sanitize_request req
+      req.gsub(/[^A-Za-z ]/, '').split.join(' & ')
     end
 
-    def self.sql_query query
+    def sql_query query
       <<-SQL
         SELECT pid
           FROM (SELECT p.id AS pid,
@@ -32,13 +31,13 @@ class Search
                     JOIN posts_tags pt ON pt.post_id = pt.tag_id
                     JOIN tags t ON t.id = pt.tag_id
                   GROUP BY p.id) p_search
-          WHERE p_search.document @@ to_tsquery('russian', #{query})
-          ORDER BY ts_rank(p_search.document, to_tsquery('russian', #{query})) DESC;
+          WHERE p_search.document @@ to_tsquery('russian', '#{query}')
+          ORDER BY ts_rank(p_search.document, to_tsquery('russian', '#{query}')) DESC;
       SQL
     end
 
-    def self.get_posts_by ids
-      Post.find(array_of_ids)
+    def get_posts_by ids
+      Post.where(id: ids)
     end
   end
 end

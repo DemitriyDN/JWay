@@ -1,4 +1,21 @@
 article.post {
+  &.no_match_criteria {
+    height: 175px;
+    p {
+      color: #333;
+      font-family: Georgia, Times, serif;
+      font-size: 14px;
+      text-shadow: 0 0 1px #777;
+      text-align: center;
+      margin: 75px 0 0 23px; ;
+
+      a {
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+
   &.opened_post {
     width: 905px;
   }

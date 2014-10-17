@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.available_for(current_user).sort_by_date.page(params[:page]).per(10)
-    @posts = @posts.includes(:tags).references(:tags)
+    @posts = @posts.eager_load(:tags)
     find_tags
   end
 

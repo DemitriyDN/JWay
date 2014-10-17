@@ -4,7 +4,7 @@
   <%= render partial: 'posts/index/paginator', locals: { posts: @posts, position: 'top' } %>
 
   <div id='post-index'>
-    <%= render partial: 'posts/index/post', collection: @posts %>
+    <%= render(partial: 'posts/index/post', collection: @posts) || render('shared/no_match_criterias') %>
   </div>
 
   <%= render partial: 'posts/index/paginator', locals: { posts: @posts, position: 'bottom' } %>
