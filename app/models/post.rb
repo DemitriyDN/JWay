@@ -1,9 +1,5 @@
 class Post < ActiveRecord::Base
   include Renderer
-  include Searchable
-
-  after_create :reindex!
-  after_update :reindex!
 
   has_and_belongs_to_many :tags
 
