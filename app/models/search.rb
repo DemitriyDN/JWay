@@ -17,7 +17,7 @@ class Search
     end
 
     def sanitize_request req
-      req.gsub(/[^A-Za-z ]/, '').split.join(' & ')
+      req.gsub(/[^A-Za-z \-]/, '').split.join(' & ')
     end
 
     def sql_query query
@@ -28,8 +28,8 @@ class Search
                        setweight(to_tsvector('russian', p.body), 'C') ||
                        setweight(to_tsvector('russian', coalesce(string_agg(t.name, ' '))), 'A') AS document
                   FROM posts p
-                    JOIN posts_tags pt ON pt.post_id = pt.tag_id
-                    JOIN tags t ON t.id = pt.tag_id
+                    LEFT JOIN posts_tags pt ON p.id = pt.post_id
+                    LEFT JOIN tags t ON t.id = pt.tag_id
                   GROUP BY p.id) p_search
           WHERE p_search.document @@ to_tsquery('russian', '#{query}')
           ORDER BY ts_rank(p_search.document, to_tsquery('russian', '#{query}')) DESC;
