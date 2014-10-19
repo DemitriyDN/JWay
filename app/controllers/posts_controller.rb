@@ -3,8 +3,8 @@ class PostsController < ApplicationController
   before_action :find_post, only: [:show, :edit, :update, :swich_state]
 
   def index
-    @posts = Post.available_for(current_user).sort_by_date.page(params[:page]).per(10)
-    @posts = @posts.eager_load(:tags)
+    @posts = Post.sort_by_date.for_user(current_user, params[:page])
+    @posts = @posts
     find_tags
   end
 
@@ -41,6 +41,7 @@ class PostsController < ApplicationController
     end
   end
 
+  # TODO: ChangeState
   def swich_state
     @post.update_state(swich_params[:state])
 

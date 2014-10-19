@@ -7,10 +7,11 @@ class Post < ActiveRecord::Base
 
   DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : 'rails-junior'.freeze
 
-  scope :available_for, -> (user) { user ? all : where(status: 1) }
   scope :sort_by_date, -> { order('created_at DESC') }
   scope :limit_rand, ->(num) { limit(num).order('RANDOM()') }
   scope :get_last_availible_id, -> { where(status: 1).last.id }
+  scope :for_user, ->(user, page) { available_for(user).page(page).per(10).preload(:tags) }
+  scope :available_for, -> (user) { user ? all : where(status: 1) }
 
   enum status: {
     verification: 0,
