@@ -18,19 +18,6 @@ class Post < ActiveRecord::Base
     approved: 1
   }
 
-  def self.reject_blank_tags param
-    param[:tag_ids] = param[:tag_ids].reject(&:empty?)
-    param
-  end
-
-  def update_state state
-    if state == 'true'
-      self.approved!
-    else
-      self.verification!
-    end
-  end
-
   def to_param
     "#{id}-#{title}".parameterize
   end

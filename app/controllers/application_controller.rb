@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
   def find_tags
     @tags = Tag.all
   end
+
+  def find_post
+   @post = Post.available_for(current_user).find(params[:id])
+
+   redirect_to root_path, alert: 'Post not find!' unless @post
+  end
 end

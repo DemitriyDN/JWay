@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_post, only: [:show, :edit, :update, :swich_state]
+  before_action :find_post, only: [:show, :edit, :update]
 
   def index
     @posts = Post.sort_by_date.for_user(current_user, params[:page])
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(Post.reject_blank_tags(post_params))
+    @post = Post.new(Tag.reject_blank_from(post_params))
     if @post.save
       redirect_to post_path(@post), notice: 'Post is successfully created!'
     else
@@ -41,26 +41,8 @@ class PostsController < ApplicationController
     end
   end
 
-  # TODO: ChangeState
-  def swich_state
-    @post.update_state(swich_params[:state])
-
-    render nothing: true
-  end
-
   private
-
-  def find_post
-   @post = Post.available_for(current_user).find(params[:id])
-
-   redirect_to root_path, alert: 'Post not find!' unless @post
-  end
-
   def post_params
     params.require(:post).permit( :title, :meta, :body, :body_title, :title_img, :original, :status, tag_ids: [] )
-  end
-
-  def swich_params
-    params.permit( :id, :state )
   end
 end

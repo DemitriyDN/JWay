@@ -9,4 +9,9 @@ class Tag < ActiveRecord::Base
   # default_scope by_name_and_priority
 
   PRIORITY_RANGE = 1..100
+
+  def self.reject_blank_from param
+    param[:tag_ids] = param[:tag_ids].reject(&:empty?)
+    param
+  end
 end

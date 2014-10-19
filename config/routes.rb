@@ -4,7 +4,9 @@ JuniorWay::Application.routes.draw do
   root to: 'posts#index'
 
   resources :posts do
-    post 'swich_state', on: :collection
+    collection do
+      resource :change_state, only: [:update]
+    end
   end
 
   resources :subscriptions, only: [:index, :create, :destroy] do
