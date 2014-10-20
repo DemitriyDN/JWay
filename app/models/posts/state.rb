@@ -1,4 +1,4 @@
-class State
+class Posts::State
   def self.change_state post, state
     if state == 'true'
       post.approved!

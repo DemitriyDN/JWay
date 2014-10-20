@@ -1,6 +1,6 @@
-class Search
+class Posts::Search
   class << self
-    def posts_by_query request
+    def by_query request
       ids = select_posts_ids_with_query(request)
       get_posts_by(ids)
     end

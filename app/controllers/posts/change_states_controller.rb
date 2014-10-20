@@ -1,4 +1,4 @@
-class ChangeStatesController < ApplicationController
+class Posts::ChangeStatesController < ApplicationController
   def update
     find_post
 

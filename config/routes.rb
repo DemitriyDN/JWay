@@ -3,9 +3,9 @@ JuniorWay::Application.routes.draw do
 
   root to: 'posts#index'
 
-  resources :posts do
+  resources :posts do #, param: :url_link do
     collection do
-      resource :change_state, only: [:update]
+      resource :change_state, only: [:update], module: 'posts'
     end
   end
 
@@ -15,7 +15,7 @@ JuniorWay::Application.routes.draw do
   end
 
   resources :tags
-  resource :search, only: [:show]
+  resource :search, only: [:show], module: 'posts'
 
   get 'sitemap.xml' => 'sitemap#index', defaults: { format: 'xml' }
 end

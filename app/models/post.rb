@@ -18,10 +18,6 @@ class Post < ActiveRecord::Base
     approved: 1
   }
 
-  def to_param
-    "#{id}-#{title}".parameterize
-  end
-
   private
   def reindex!
     Sunspot.index!(self)
