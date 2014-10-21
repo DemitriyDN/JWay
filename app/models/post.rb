@@ -5,6 +5,9 @@ class Post < ActiveRecord::Base
 
   before_save :render_body
 
+  validates :url_link, presence: true
+  validates :url_link, uniqueness: true
+
   DISQUS_SHORTNAME = Rails.env == 'development' ? 'demitriydn'.freeze : 'rails-junior'.freeze
 
   scope :sort_by_date, -> { order('created_at DESC') }
