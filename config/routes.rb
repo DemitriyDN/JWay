@@ -3,7 +3,7 @@ JuniorWay::Application.routes.draw do
 
   root to: 'posts#index'
 
-  resources :posts do #, param: :url_link do
+  resources :posts, param: :url_link do
     collection do
       resource :change_state, only: [:update], module: 'posts'
     end
