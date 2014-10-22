@@ -34,7 +34,9 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update_attributes!(post_params)
+    if @post.update_attributes(post_params)
+      # asdasdasd
+
       redirect_to post_path(@post.url_link), notice: 'Post is successfully updated!'
     else
       render :edit

@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
+  self.primary_key = :url_link
+
   include Renderer
 
-  has_and_belongs_to_many :tags
+  has_and_belongs_to_many :tags, foreign_key: :post_id
 
   before_save :render_body
 
@@ -20,9 +22,4 @@ class Post < ActiveRecord::Base
     verification: 0,
     approved: 1
   }
-
-  private
-  def reindex!
-    Sunspot.index!(self)
-  end
 end
