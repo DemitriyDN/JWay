@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :find_post, only: [:show, :edit, :update]
 
   def index
     @posts = Post.sort_by_date.for_user(current_user, params[:page])
@@ -9,6 +8,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    find_post_by('url_link')
+
     @relative_posts = Post.limit_rand(5)
     @tags = @post.tags
   end
@@ -29,11 +30,15 @@ class PostsController < ApplicationController
   end
 
   def edit
+    find_post_by('url_link')
+
     find_tags
     render :new
   end
 
   def update
+    find_post_by('id')
+
     if @post.update_attributes!(post_params)
       redirect_to post_path(@post.url_link), notice: 'Post is successfully updated!'
     else

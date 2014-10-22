@@ -16,6 +16,9 @@ class Post < ActiveRecord::Base
   scope :for_user, ->(user, page) { available_for(user).page(page).per(10).preload(:tags) }
   scope :available_for, -> (user) { user ? all : where(status: 1) }
 
+  scope :by_url_link, ->(val) { where(url_link: val[:url_link]).first }
+  scope :by_id, ->(val) { where(id: val[:post][:post_id]).first }
+
   enum status: {
     verification: 0,
     approved: 1

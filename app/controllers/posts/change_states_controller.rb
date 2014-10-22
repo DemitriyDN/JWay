@@ -1,8 +1,8 @@
 class Posts::ChangeStatesController < ApplicationController
   def update
-    find_post
+    find_post_by('url_link')
 
-    State.change_state(@post, swich_params[:state])
+    Posts::State.change_state(@post, swich_params[:state])
 
     render nothing: true
   end

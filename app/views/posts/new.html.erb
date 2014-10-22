@@ -1,6 +1,8 @@
 <div id='content' class='content-col col admin_pages'>
   <%= form_for @post do |f| %>
 
+  <%= f.hidden_field :post_id, { value: @post.id } %>
+
   <div class='control-group'>
     <label class='control-label'>Photos:</label>
     <div class='controls'>

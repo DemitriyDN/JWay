@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
     @tags = Tag.all
   end
 
-  def find_post
-    @post = Post.available_for(current_user).find_by(url_link: params[:url_link])
+  def find_post_by method
+    @post = Post.available_for(current_user).send("by_#{method}", params)
 
     redirect_to root_path, alert: 'Post not find!' unless @post
   end
