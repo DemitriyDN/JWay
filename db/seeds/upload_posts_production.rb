@@ -2,6 +2,7 @@ module UploadProduction
   def add_posts
     post = Post.new
     post.title = 'Памятка!'
+    post.url_link = 'img-fotki'
     post.title_img = 'http://img-fotki.yandex.ru/get/6746/268686932.0/0_e8534_a63027d2_orig.png'
     post.body_title = 'Я должен вас предупредить...'
     post.body = '
@@ -19,6 +20,7 @@ module UploadProduction
   def add_highliter_post
     post = Post.new
     post.title = 'Памятка!'
+    post.url_link = 'img-fotkiasasd'
     post.title_img = ''
     post.body_title = 'Syntax Highliter'
     post.body = <<-TEXT
