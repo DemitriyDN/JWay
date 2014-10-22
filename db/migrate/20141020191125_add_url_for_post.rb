@@ -1,7 +1,7 @@
 class AddUrlForPost < ActiveRecord::Migration
   def up
-    add_column :posts, :url_link, :string
-    add_index  :posts, :url_link
+    add_column :posts, :url_link, :string, null: false
+    add_index  :posts, :url_link, unique: true
   end
 
   def down
