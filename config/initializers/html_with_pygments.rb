@@ -43,8 +43,9 @@ class HTMLwithPygments < Redcarpet::Render::HTML
   def tableize_code_wrapper(str, options)
     link  = options['link']
     title = options['title']
+    cut   = options['cut']
 
-    source  = "<figure class='code'>"
+    source  = "<figure class='code #{cut}'>"
 
     caption_start  = "<figcaption>#{title}"
     caption_link   = link ? " <a target='_blank' href='#{link}'>link</a>" : ""
@@ -61,7 +62,7 @@ class HTMLwithPygments < Redcarpet::Render::HTML
 
   def parse_options data
     # data = 'lang===ruby###title===sssss###link===http://j.mp/pPUUmW###highlight===11,12,13,17,18###start_from===10'
-    # no_numbers===true
+    # no_numbers===true###cut===cut
 
     array_with_params = data.split('###').collect{|x| x.split('===')}
     # [["lang", "ruby"],
@@ -69,13 +70,14 @@ class HTMLwithPygments < Redcarpet::Render::HTML
     # ["link", "http//j.mp/pPUUmW"],
     # ["highlight", "11,13,17,18"],
     # ["start_from", "10"],
-    # ["no_numbers", "true"],]
+    # ["cut", "cut"],
+    # ["no_numbers", "true"]]
 
     parsed_hash = Hash[array_with_params]
     parsed_hash['title'] = parsed_hash['title'].split('_').join(' ') if parsed_hash['title']
     parsed_hash['highlight'] = parsed_hash['highlight'].split(',') if parsed_hash['highlight']
 
-    # {"lang"=>"ruby", "title"=>"sssss", "link"=>"http://j.mp/pPUUmW", "highlight"=>["11", "13", "17", "18"], "start_from"=>"10", "no_numbers"=>"true"}
+    # {"lang"=>"ruby", "title"=>"sssss", "link"=>"http://j.mp/pPUUmW", "highlight"=>["11", "13", "17", "18"], "start_from"=>"10", "no_numbers"=>"true", "cut"=>"true"}
     parsed_hash
   end
 end

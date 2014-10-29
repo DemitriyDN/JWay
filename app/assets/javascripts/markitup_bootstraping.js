@@ -50,6 +50,7 @@ $(function() {
   var codeInsertionModal = $('#codeInsertionModal'),
       string_to_parse = '',
       no_number = codeInsertionModal.find('.no_numbers'),
+      cut = codeInsertionModal.find('.cut'),
       language = codeInsertionModal.find('.language'),
       title = codeInsertionModal.find('.title'),
       link = codeInsertionModal.find('.link'),
@@ -63,6 +64,7 @@ $(function() {
 
   codeInsertionModal.find('.clear').on('click', function(){
     no_number.prop('checked', false),
+    cut.prop('checked', false),
     language.val('');
     title.val('');
     link.val('');
@@ -83,6 +85,10 @@ $(function() {
 
       if ( title.val() ){
         string_to_parse += '###title===' + title.val()
+
+        if ( cut.prop('checked') ){
+          string_to_parse += '###cut===cut'
+        }
       }
 
       if ( link.val() ){
@@ -94,6 +100,10 @@ $(function() {
 
       if ( title.val() ){
         string_to_parse += '###title===' + title.val()
+
+        if ( cut.prop('checked') ){
+          string_to_parse += '###cut===cut'
+        }
       }
 
       if ( link.val() ){
