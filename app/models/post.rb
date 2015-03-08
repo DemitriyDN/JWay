@@ -23,9 +23,4 @@ class Post < ActiveRecord::Base
     verification: 0,
     approved: 1
   }
-
-  private
-  def reindex!
-    Sunspot.index!(self)
-  end
 end

@@ -144,6 +144,12 @@ article.post {
       }
     }
 
+    a {
+      text-decoration: underline;
+      outline: none;
+      color: #1863A1;
+    }
+
     p {
       margin-bottom: 1.5em;
 
@@ -159,11 +165,6 @@ article.post {
         float: left;
       }
 
-      a {
-        text-decoration: underline;
-        outline: none;
-        color: #1863A1;
-      }
     }
 
     table.simple {
