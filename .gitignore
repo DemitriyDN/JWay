@@ -16,5 +16,6 @@ public/safeguard
 vendor/ruby
 public/brakeman.html
 config/secrets.yml
+config/environments/development.rb
 backup/*
 db/schema.rb
