@@ -23,6 +23,9 @@ group :development do
 
   gem 'brakeman', require: false
   # brakeman -o public/brakeman.html
+
+  gem 'quiet_assets'
+  gem 'awesome_print'
 end
 
 gem 'redcarpet', github: 'DemitriyDN/redcarpet', branch: '306-add-class-to-image'

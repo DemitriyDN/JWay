@@ -9,15 +9,9 @@ module ApplicationHelper
 
   def original original_link
     if original_link.present?
-      link_to_for_href(original_link)
+      link_to 'Original', original_link, target: '_blank'
     else
       'No Original'
-    end
-  end
-
-  def link_to_for_href original_link
-    content_tag :a, href: original_link do
-      'Original'
     end
   end
 
